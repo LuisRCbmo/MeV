@@ -2,14 +2,10 @@
 /* DBMS name:      PostgreSQL 8                                 */
 /* Created on:     25/6/2020 19:29:16                           */
 /*==============================================================*/
-
-/*==============================================================*/
-/* Table: CLASS                                                 */
-/*==============================================================*/
 create table CLASS (
    COD_CLS              VARCHAR(30)          not null,
    "GROUP"              INT4                 not null,
-   COD_SCH              VARCHAR(20)          null,
+   COD_SCH              VARCHAR(20)          not null,
    COD_SE               CHAR(10)             not null,
    NAME                 VARCHAR(30)          not null,
    constraint PK_CLASS primary key (COD_CLS, "GROUP")
