@@ -1,0 +1,102 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+.header{
+    padding: 3%;
+    color:#e8e8e8;
+    display: flex;
+    background-color: #333A56;
+}
+
+h1{
+    position: absolute;
+    left: 25%;
+    top: 7.5%;
+    font-size: 700%;
+}
+
+#slider {
+    width: 100%;
+}
+
+footer div {
+    text-align: center;
+    background-color: #333A56;
+}
+
+footer div p {
+    color: #F7F5E6;
+    text-align: center;
+    font-size: 14px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-top: 0%;
+}
+
+.social{
+    display: flex;
+    justify-content: center;
+}
+
+#deep{
+    background-color: #e8e8e8;
+}
+
+#deep p {
+    padding: 0%;
+    margin: 0%;
+    color: black;
+    text-align: center;
+}
+
+#icon{
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+}
+
+#nav {
+    min-width: 50%;
+    width: 100%;
+    background-color: #091225;
+    height: 40px;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+#nav ul{
+    list-style: none;
+    text-decoration: none;
+    margin: 0px auto;
+    width: 800px;
+}
+
+#nav > ul > li{
+	line-height: 40px;
+    float: left;
+
+	transition: all 800ms;
+	display: block;
+}
+
+#nav > ul > li a{
+    padding-left: 30px;
+    padding-right: 30px;
+	color: #e8e8e8;
+	text-decoration: none;
+}
+
+#nav > ul > li > a:first-child{
+    border-left: 3px solid #e8e8e8;
+}
+
+#nav > ul > li:hover{
+    background-color: #333A56;
+	box-shadow: 0px 0px 4px  #333A56;
+	color: azure;
+}
+#nav a:hover {
+	color: azure;
+	
+}
