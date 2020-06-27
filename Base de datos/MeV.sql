@@ -1,12 +1,15 @@
 /*==============================================================*/
 /* DBMS name:      PostgreSQL 8                                 */
-/* Created on:     25/6/2020 19:29:16                           */
+/* Created on:     26/6/2020 20:15:30                           */
+/*==============================================================*/
+/*==============================================================*/
+/* Table: CLASS                                                 */
 /*==============================================================*/
 create table CLASS (
    COD_CLS              VARCHAR(30)          not null,
    "GROUP"              INT4                 not null,
-   COD_SCH              VARCHAR(20)          not null,
-   COD_SE               CHAR(10)             not null,
+   COD_SCHE             VARCHAR(20)          not null,
+   COD_SE               VARCHAR(1)           not null,
    NAME                 VARCHAR(30)          not null,
    constraint PK_CLASS primary key (COD_CLS, "GROUP")
 );
@@ -20,17 +23,17 @@ COD_CLS,
 );
 
 /*==============================================================*/
-/* Index: RELATIONSHIP_6_FK                                     */
+/* Index: HAVE_A_FK                                             */
 /*==============================================================*/
-create  index RELATIONSHIP_6_FK on CLASS (
-COD_SCH
+create  index HAVE_A_FK on CLASS (
+COD_SE
 );
 
 /*==============================================================*/
-/* Index: RELATIONSHIP_9_FK                                     */
+/* Index: S_C_FK                                                */
 /*==============================================================*/
-create  index RELATIONSHIP_9_FK on CLASS (
-COD_SE
+create  index S_C_FK on CLASS (
+COD_SCHE
 );
 
 /*==============================================================*/
@@ -38,7 +41,6 @@ COD_SE
 /*==============================================================*/
 create table CLASSROOM (
    COD_CL               VARCHAR(4)           not null,
-   COD_SCH              VARCHAR(20)          not null,
    UBICATION            VARCHAR(100)         not null,
    constraint PK_CLASSROOM primary key (COD_CL)
 );
@@ -48,13 +50,6 @@ create table CLASSROOM (
 /*==============================================================*/
 create unique index CLASSROOM_PK on CLASSROOM (
 COD_CL
-);
-
-/*==============================================================*/
-/* Index: RELATIONSHIP_3_FK                                     */
-/*==============================================================*/
-create  index RELATIONSHIP_3_FK on CLASSROOM (
-COD_SCH
 );
 
 /*==============================================================*/
@@ -73,118 +68,90 @@ DAY
 );
 
 /*==============================================================*/
-/* Table: FOLLOW                                                */
+/* Table: DAY_CLASS                                             */
 /*==============================================================*/
-create table FOLLOW (
-   COD_SCH              VARCHAR(20)          not null,
+create table DAY_CLASS (
    DAY                  VARCHAR(2)           not null,
-   constraint PK_RELATIONSHIP_7 primary key (COD_SCH, DAY)
+   COD_CLS              VARCHAR(30)          not null,
+   "GROUP"              INT4                 not null,
+   constraint PK_DAY_CLASS primary key (DAY, COD_CLS, "GROUP")
 );
 
 /*==============================================================*/
-/* Index: RELATIONSHIP_7_PK                                     */
+/* Index: DAY_CLASS_PK                                          */
 /*==============================================================*/
-create unique index RELATIONSHIP_7_PK on FOLLOW (
-COD_SCH,
+create unique index DAY_CLASS_PK on DAY_CLASS (
+DAY,
+COD_CLS,
+"GROUP"
+);
+
+/*==============================================================*/
+/* Index: DAY_CLASS_FK                                          */
+/*==============================================================*/
+create  index DAY_CLASS_FK on DAY_CLASS (
 DAY
 );
 
 /*==============================================================*/
-/* Index: RELATIONSHIP_10_FK                                    */
+/* Index: DAY_CLASS2_FK                                         */
 /*==============================================================*/
-create  index RELATIONSHIP_10_FK on FOLLOW (
-COD_SCH
-);
-
-/*==============================================================*/
-/* Index: RELATIONSHIP_11_FK                                    */
-/*==============================================================*/
-create  index RELATIONSHIP_11_FK on FOLLOW (
-DAY
-);
-
-/*==============================================================*/
-/* Table: HAVE_A                                                */
-/*==============================================================*/
-create table HAVE_A (
-   CORREO               VARCHAR(60)          not null,
-   COD_SCH              VARCHAR(20)          not null,
-   constraint PK_RELATIONSHIP_1 primary key (CORREO, COD_SCH)
-);
-
-/*==============================================================*/
-/* Index: RELATIONSHIP_1_PK                                     */
-/*==============================================================*/
-create unique index RELATIONSHIP_1_PK on HAVE_A (
-CORREO,
-COD_SCH
-);
-
-/*==============================================================*/
-/* Index: RELATIONSHIP_1_FK                                     */
-/*==============================================================*/
-create  index RELATIONSHIP_1_FK on HAVE_A (
-CORREO
-);
-
-/*==============================================================*/
-/* Index: RELATIONSHIP_2_FK                                     */
-/*==============================================================*/
-create  index RELATIONSHIP_2_FK on HAVE_A (
-COD_SCH
-);
-
-/*==============================================================*/
-/* Table: "IS"                                                  */
-/*==============================================================*/
-create table "IS" (
-   COD_SCH              VARCHAR(20)          not null,
-   COD_TI               CHAR(10)             not null,
-   constraint PK_RELATIONSHIP_3 primary key (COD_SCH, COD_TI)
-);
-
-/*==============================================================*/
-/* Index: RELATIONSHIP_3_PK                                     */
-/*==============================================================*/
-create unique index RELATIONSHIP_3_PK on "IS" (
-COD_SCH,
-COD_TI
-);
-
-/*==============================================================*/
-/* Index: RELATIONSHIP_4_FK                                     */
-/*==============================================================*/
-create  index RELATIONSHIP_4_FK on "IS" (
-COD_SCH
-);
-
-/*==============================================================*/
-/* Index: RELATIONSHIP_5_FK                                     */
-/*==============================================================*/
-create  index RELATIONSHIP_5_FK on "IS" (
-COD_TI
+create  index DAY_CLASS2_FK on DAY_CLASS (
+COD_CLS,
+"GROUP"
 );
 
 /*==============================================================*/
 /* Table: SCHEDULE                                              */
 /*==============================================================*/
 create table SCHEDULE (
-   COD_SCH              VARCHAR(20)          not null,
-   constraint PK_SCHEDULE primary key (COD_SCH)
+   COD_SCHE             VARCHAR(20)          not null,
+   constraint PK_SCHEDULE primary key (COD_SCHE)
 );
 
 /*==============================================================*/
 /* Index: SCHEDULE_PK                                           */
 /*==============================================================*/
 create unique index SCHEDULE_PK on SCHEDULE (
-COD_SCH
+COD_SCHE
+);
+
+/*==============================================================*/
+/* Table: SCHEDULE_STUDENT                                      */
+/*==============================================================*/
+create table SCHEDULE_STUDENT (
+   COD_SCHE             VARCHAR(20)          not null,
+   CORREO               VARCHAR(60)          not null,
+   constraint PK_SCHEDULE_STUDENT primary key (COD_SCHE, CORREO)
+);
+
+/*==============================================================*/
+/* Index: SCHEDULE_STUDENT_PK                                   */
+/*==============================================================*/
+create unique index SCHEDULE_STUDENT_PK on SCHEDULE_STUDENT (
+COD_SCHE,
+CORREO
+);
+
+/*==============================================================*/
+/* Index: SCHEDULE_STUDENT_FK                                   */
+/*==============================================================*/
+create  index SCHEDULE_STUDENT_FK on SCHEDULE_STUDENT (
+COD_SCHE
+);
+
+/*==============================================================*/
+/* Index: SCHEDULE_STUDENT2_FK                                  */
+/*==============================================================*/
+create  index SCHEDULE_STUDENT2_FK on SCHEDULE_STUDENT (
+CORREO
 );
 
 /*==============================================================*/
 /* Table: SEMESTER                                              */
 /*==============================================================*/
 create table SEMESTER (
-   COD_SE               CHAR(10)             not null,
+   COD_SE               VARCHAR(1)           not null,
    constraint PK_SEMESTER primary key (COD_SE)
 );
 
@@ -212,45 +179,12 @@ CORREO
 );
 
 /*==============================================================*/
-/* Table: TEACH                                                 */
-/*==============================================================*/
-create table TEACH (
-   COD_CLS              VARCHAR(30)          not null,
-   "GROUP"              INT4                 not null,
-   FULL_NAME            CHAR(10)             not null,
-   constraint PK_RELATIONSHIP_5 primary key (COD_CLS, "GROUP", FULL_NAME)
-);
-
-/*==============================================================*/
-/* Index: RELATIONSHIP_5_PK                                     */
-/*==============================================================*/
-create unique index RELATIONSHIP_5_PK on TEACH (
-COD_CLS,
-"GROUP",
-FULL_NAME
-);
-
-/*==============================================================*/
-/* Index: RELATIONSHIP_7_FK                                     */
-/*==============================================================*/
-create  index RELATIONSHIP_7_FK on TEACH (
-COD_CLS,
-"GROUP"
-);
-
-/*==============================================================*/
-/* Index: RELATIONSHIP_8_FK                                     */
-/*==============================================================*/
-create  index RELATIONSHIP_8_FK on TEACH (
-FULL_NAME
-);
-
-/*==============================================================*/
 /* Table: TEACHER                                               */
 /*==============================================================*/
 create table TEACHER (
-   FULL_NAME            CHAR(10)             not null,
-   DEGREE               CHAR(10)             not null,
+   FULL_NAME            VARCHAR(50)          not null,
+   COD_SCHE             VARCHAR(20)          not null,
+   DEGREE               VARCHAR(10)          not null,
    constraint PK_TEACHER primary key (FULL_NAME)
 );
 
@@ -262,19 +196,88 @@ FULL_NAME
 );
 
 /*==============================================================*/
-/* Table: "TIME"                                                */
+/* Index: S_T_FK                                                */
 /*==============================================================*/
-create table "TIME" (
-   COD_TI               CHAR(10)             not null,
-   START                CHAR(10)             not null,
-   "END"                CHAR(10)             not null,
+create  index S_T_FK on TEACHER (
+COD_SCHE
+);
+
+/*==============================================================*/
+/* Table: TEACHER_CLASS                                         */
+/*==============================================================*/
+create table TEACHER_CLASS (
+   COD_CL               VARCHAR(4)           not null,
+   FULL_NAME            VARCHAR(50)          not null,
+   constraint PK_TEACHER_CLASS primary key (COD_CL, FULL_NAME)
+);
+
+/*==============================================================*/
+/* Index: TEACHER_CLASS_PK                                      */
+/*==============================================================*/
+create unique index TEACHER_CLASS_PK on TEACHER_CLASS (
+COD_CL,
+FULL_NAME
+);
+
+/*==============================================================*/
+/* Index: TEACHER_CLASS_FK                                      */
+/*==============================================================*/
+create  index TEACHER_CLASS_FK on TEACHER_CLASS (
+COD_CL
+);
+
+/*==============================================================*/
+/* Index: TEACHER_CLASS2_FK                                     */
+/*==============================================================*/
+create  index TEACHER_CLASS2_FK on TEACHER_CLASS (
+FULL_NAME
+);
+
+/*==============================================================*/
+/* Table: TEACHER_TIME                                          */
+/*==============================================================*/
+create table TEACHER_TIME (
+   COD_TI               INT4                 not null,
+   FULL_NAME            VARCHAR(50)          not null,
+   constraint PK_TEACHER_TIME primary key (COD_TI, FULL_NAME)
+);
+
+/*==============================================================*/
+/* Index: TEACHER_TIME_PK                                       */
+/*==============================================================*/
+create unique index TEACHER_TIME_PK on TEACHER_TIME (
+COD_TI,
+FULL_NAME
+);
+
+/*==============================================================*/
+/* Index: TEACHER_TIME_FK                                       */
+/*==============================================================*/
+create  index TEACHER_TIME_FK on TEACHER_TIME (
+COD_TI
+);
+
+/*==============================================================*/
+/* Index: TEACHER_TIME2_FK                                      */
+/*==============================================================*/
+create  index TEACHER_TIME2_FK on TEACHER_TIME (
+FULL_NAME
+);
+
+/*==============================================================*/
+/* Table: TIME_OF                                               */
+/*==============================================================*/
+create table TIME_OF (
+   COD_TI               INT4                 not null,
+   STARTS               TIME                 not null,
+   "END"                TIME                 not null,
    constraint PK_TIME primary key (COD_TI)
 );
 
 /*==============================================================*/
-/* Index: TIME_PK                                               */
+/* Index: TIME_OF_PK                                            */
 /*==============================================================*/
-create unique index TIME_PK on "TIME" (
+create unique index TIME_OF_PK on TIME_OF (
 COD_TI
 );
 
@@ -284,52 +287,52 @@ alter table CLASS
       on delete restrict on update restrict;
 
 alter table CLASS
-   add constraint FK_CLASS_RELATIONS_SCHEDULE foreign key (COD_SCH)
-      references SCHEDULE (COD_SCH)
+   add constraint FK_CLASS_SCHEDULE__SCHEDULE foreign key (COD_SCHE)
+      references SCHEDULE (COD_SCHE)
       on delete restrict on update restrict;
 
-alter table CLASSROOM
-   add constraint FK_CLASSROO_RELATIONS_SCHEDULE foreign key (COD_SCH)
-      references SCHEDULE (COD_SCH)
-      on delete restrict on update restrict;
-
-alter table FOLLOW
-   add constraint FK_RELATION_RELATIONS_SCHEDULE foreign key (COD_SCH)
-      references SCHEDULE (COD_SCH)
-      on delete restrict on update restrict;
-
-alter table FOLLOW
-   add constraint FK_RELATION_RELATIONS_DAY foreign key (DAY)
+alter table DAY_CLASS
+   add constraint FK_DAY_CLAS_DAY_CLASS_DAY foreign key (DAY)
       references DAY (DAY)
       on delete restrict on update restrict;
 
-alter table HAVE_A
-   add constraint FK_RELATION_RELATIONS_STUDENT foreign key (CORREO)
-      references STUDENT (CORREO)
-      on delete restrict on update restrict;
-
-alter table HAVE_A
-   add constraint FK_RELATION_RELATIONS_SCHEDULE foreign key (COD_SCH)
-      references SCHEDULE (COD_SCH)
-      on delete restrict on update restrict;
-
-alter table "IS"
-   add constraint FK_RELATION_RELATIONS_SCHEDULE foreign key (COD_SCH)
-      references SCHEDULE (COD_SCH)
-      on delete restrict on update restrict;
-
-alter table "IS"
-   add constraint FK_RELATION_RELATIONS_TIME foreign key (COD_TI)
-      references "TIME" (COD_TI)
-      on delete restrict on update restrict;
-
-alter table TEACH
-   add constraint FK_RELATION_RELATIONS_CLASS foreign key (COD_CLS, "GROUP")
+alter table DAY_CLASS
+   add constraint FK_DAY_CLAS_DAY_CLASS_CLASS foreign key (COD_CLS, "GROUP")
       references CLASS (COD_CLS, "GROUP")
       on delete restrict on update restrict;
 
-alter table TEACH
-   add constraint FK_RELATION_RELATIONS_TEACHER foreign key (FULL_NAME)
+alter table SCHEDULE_STUDENT
+   add constraint FK_SCHEDULE_SCHEDULE__SCHEDULE foreign key (COD_SCHE)
+      references SCHEDULE (COD_SCHE)
+      on delete restrict on update restrict;
+
+alter table SCHEDULE_STUDENT
+   add constraint FK_SCHEDULE_SCHEDULE__STUDENT foreign key (CORREO)
+      references STUDENT (CORREO)
+      on delete restrict on update restrict;
+
+alter table TEACHER
+   add constraint FK_TEACHER_SCHEDULE__SCHEDULE foreign key (COD_SCHE)
+      references SCHEDULE (COD_SCHE)
+      on delete restrict on update restrict;
+
+alter table TEACHER_CLASS
+   add constraint FK_TEACHER__TEACHER_C_CLASSROO foreign key (COD_CL)
+      references CLASSROOM (COD_CL)
+      on delete restrict on update restrict;
+
+alter table TEACHER_CLASS
+   add constraint FK_TEACHER__TEACHER_C_TEACHER foreign key (FULL_NAME)
+      references TEACHER (FULL_NAME)
+      on delete restrict on update restrict;
+
+alter table TEACHER_TIME
+   add constraint FK_TEACHER__TEACHER_T_TIME_OF foreign key (COD_TI)
+      references TIME_OF (COD_TI)
+      on delete restrict on update restrict;
+
+alter table TEACHER_TIME
+   add constraint FK_TEACHER__TEACHER_T_TEACHER foreign key (FULL_NAME)
       references TEACHER (FULL_NAME)
       on delete restrict on update restrict;
 
