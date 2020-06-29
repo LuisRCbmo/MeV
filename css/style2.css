@@ -1,0 +1,45 @@
+body{
+    background-color: #F7F5E6;
+}
+#cabecera{
+    background-image: url("../image/vista.jpg");
+    height: 140px;
+    background-position-y: 50%;
+    overflow: hidden;;
+}
+.wrapper{
+    color: #828081;
+    padding: 2%;
+    margin: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 25% ;
+    background-color: #E8E8E8;
+}
+h2{
+    font-size: 200%;
+    margin: 3%;
+}
+
+label{
+    font-size: 150%;
+}
+
+input{
+    padding: 1%;
+    margin-top: 8%;
+}
+#boton{
+    width: 50%;
+    background-color: #52658F;
+    color: #E8E8E8;
+    margin-bottom: 2%;
+}
+a{
+    color: #E9C893;
+    text-decoration: none;
+}
+a:hover{
+    color: #333A56;
+}

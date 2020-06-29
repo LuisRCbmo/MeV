@@ -11,7 +11,6 @@
 }
 
 h1{
-    position: absolute;
     left: 25%;
     top: 7.5%;
     font-size: 700%;
@@ -29,10 +28,14 @@ footer div {
 footer div p {
     color: #F7F5E6;
     text-align: center;
-    font-size: 14px;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    font-size: 200%;
+    padding-top: 2%;
+    padding-bottom: 2%;
     margin-top: 0%;
+}
+
+#deep p{
+    font-size: 100%;
 }
 
 .social{
@@ -54,15 +57,15 @@ footer div p {
 #icon{
     margin-right: 2.5%;
     margin-left: 2.5%;
+    margin-bottom: 1%;
 }
 
 #nav {
     min-width: 50%;
     width: 100%;
-    background-color: #091225;
+    background-color: 	#131731c0;
     height: 40px;
 	font-size: 18px;
-	font-weight: 600;
 }
 
 #nav ul{
