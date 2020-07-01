@@ -1,6 +1,32 @@
 *{
     padding: 0%;
     margin: 0%;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: #F7F5E6;
+}
+
+
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+.wrapper {
+    width: 100%;
+}
+
+#imagebuscar {
+    padding: 2%;
+}
+
+#cabecera{
+    background-image: url("../image/vista.jpg");
+    height: 140px;
+    background-position-y: 50%;
+    overflow: hidden;;
 }
 
 .header{
@@ -8,56 +34,6 @@
     color:#e8e8e8;
     display: flex;
     background-color: #333A56;
-}
-
-h1{
-    left: 25%;
-    top: 7.5%;
-    font-size: 700%;
-}
-
-#slider {
-    width: 100%;
-}
-
-footer div {
-    text-align: center;
-    background-color: #333A56;
-}
-
-footer div p {
-    color: #F7F5E6;
-    text-align: center;
-    font-size: 200%;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    margin-top: 0%;
-}
-
-#deep p{
-    font-size: 100%;
-}
-
-.social{
-    display: flex;
-    justify-content: center;
-}
-
-#deep{
-    background-color: #e8e8e8;
-}
-
-#deep p {
-    padding: 0%;
-    margin: 0%;
-    color: black;
-    text-align: center;
-}
-
-#icon{
-    margin-right: 2.5%;
-    margin-left: 2.5%;
-    margin-bottom: 1%;
 }
 
 #nav {
@@ -102,4 +78,56 @@ footer div p {
 #nav a:hover {
 	color: azure;
 	
+}
+
+
+h1{
+    left: 25%;
+    top: 7.5%;
+    font-size: 700%;
+}
+
+#slider {
+    width: 100%;
+}
+
+
+#deep p{
+    font-size: 100%;
+}
+
+.social{
+    display: flex;
+    justify-content: center;
+}
+
+#deep{
+    background-color: #e8e8e8;
+}
+
+#deep p {
+    padding: 0%;
+    margin: 0%;
+    color: black;
+    text-align: center;
+}
+
+#icon{
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+    margin-bottom: 1%;
+}
+
+footer div {
+    text-align: center;
+    background-color: #333A56;
+}
+
+footer div p {
+    color: #F7F5E6;
+    text-align: center;
+    font-size: 200%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-top: 0%;
 }

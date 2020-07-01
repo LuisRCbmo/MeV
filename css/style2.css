@@ -1,12 +1,7 @@
 body{
     background-color: #F7F5E6;
 }
-#cabecera{
-    background-image: url("../image/vista.jpg");
-    height: 140px;
-    background-position-y: 50%;
-    overflow: hidden;;
-}
+
 .wrapper{
     color: #828081;
     padding: 2%;
@@ -17,6 +12,11 @@ body{
     width: 25% ;
     background-color: #E8E8E8;
 }
+
+#formulario {
+    margin: auto;
+}
+
 h2{
     font-size: 200%;
     margin: 3%;
