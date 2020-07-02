@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      PostgreSQL 8                                 */
-/* Created on:     28/6/2020 18:17:49                           */
+/* Created on:     2/7/2020 13:00:45                            */
 /*==============================================================*/
 /*==============================================================*/
 /* Table: CLASS                                                 */
@@ -65,9 +65,9 @@ create table SCHEDULE (
 );
 
 /*==============================================================*/
-/* Index: SCHEDULE_FK                                           */
+/* Index: SCHEDULE_PK                                           */
 /*==============================================================*/
-create  index SCHEDULE_FK on SCHEDULE (
+create  index SCHEDULE_PK on SCHEDULE (
 COD_CLS,
 "GROUP"
 );
@@ -84,41 +84,35 @@ DAY
 /*==============================================================*/
 create table STUDENT (
    CORREO               VARCHAR(60)          not null,
-   PASSWORD             VARCHAR(20)          not null,
-   constraint PK_STUDENT primary key (CORREO)
+   PASSWORD             VBIN3200             not null,
+   "USER"               VARCHAR(30)          not null,
+   constraint PK_STUDENT primary key ("USER", CORREO)
 );
 
 /*==============================================================*/
 /* Index: STUDENT_PK                                            */
 /*==============================================================*/
-create unique index STUDENT_PK on STUDENT (
-CORREO
-);
-
 /*==============================================================*/
 /* Table: STUDENT_CLASS                                         */
 /*==============================================================*/
 create table STUDENT_CLASS (
-   CORREO               VARCHAR(60)          not null,
+   "USER"               VARCHAR(30)          not null,
    COD_CLS              VARCHAR(30)          not null,
-   "GROUP"              INT4                 not null,
-   constraint PK_STUDENT_CLASS primary key (CORREO, COD_CLS, "GROUP")
+   "GROUP"              INT4                 not null
 );
 
 /*==============================================================*/
 /* Index: STUDENT_CLASS_PK                                      */
 /*==============================================================*/
 create unique index STUDENT_CLASS_PK on STUDENT_CLASS (
-CORREO,
-COD_CLS,
-"GROUP"
+"USER"
 );
 
 /*==============================================================*/
 /* Index: STUDENT_CLASS_FK                                      */
 /*==============================================================*/
 create  index STUDENT_CLASS_FK on STUDENT_CLASS (
-CORREO
+"USER"
 );
 
 /*==============================================================*/
@@ -188,8 +182,8 @@ alter table SCHEDULE
       on delete restrict on update restrict;
 
 alter table STUDENT_CLASS
-   add constraint FK_STUDENT__STUDENT_C_STUDENT foreign key (CORREO)
-      references STUDENT (CORREO)
+   add constraint FK_STUDENT__STUDENT_C_STUDENT foreign key ("USER", "USER")
+      references STUDENT ("USER", CORREO)
       on delete restrict on update restrict;
 
 alter table STUDENT_CLASS
