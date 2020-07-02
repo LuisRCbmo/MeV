@@ -3,6 +3,8 @@ body{
 }
 
 .wrapper{
+    margin: auto;
+    display: block;
     color: #828081;
     padding: 2%;
     margin: 2%;
@@ -11,10 +13,12 @@ body{
     text-align: center;
     width: 25% ;
     background-color: #E8E8E8;
+    width: max-content;
 }
 
 #formulario {
     margin: auto;
+    width: max-content;
 }
 
 h2{
