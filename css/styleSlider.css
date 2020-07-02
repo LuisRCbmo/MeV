@@ -9,7 +9,9 @@
 
 /* Hide the images by default */
 .mySlides {
+  overflow: hidden;
   display: none;
+  height: 400px;
 }
 
 /* Next & previous buttons */
