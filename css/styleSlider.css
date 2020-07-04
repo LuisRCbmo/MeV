@@ -5,6 +5,7 @@
   max-width: 100%;
   position: relative;
   margin: auto;
+  overflow: hidden;
 }
 
 /* Hide the images by default */
@@ -13,50 +14,15 @@
   display: none;
   height: 400px;
 }
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  width: auto;
-  padding: 1%;
-  color: white;
-  font-weight: bold;
-  font-size: 150%;
-  transition: 0.6s ease;
-  border-radius: 0 10% 10% 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 10% 0 0 10% ;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
 .text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
   position: absolute;
-  bottom: 8px;
+  margin-top: auto;
+  margin-left: auto;
+  color: aliceblue;
   width: 100%;
+  font-size: 60px;
   text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
+  vertical-align: auto;
 }
 
 /* The dots/bullets/indicators */
