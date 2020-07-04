@@ -70,9 +70,13 @@ h2{
 }
 
 #boton {
-    font-size: 100%;
     margin-top: 4%;
-    width: 40%;
-    background-color:#52658F;
-    color: #29090F;
+    width: 50%;
+    height: 30px;
+    background-color: #52658F;
+    color: #E8E8E8;
+    margin-bottom: 10%;
+    font-size: 15px;
+    border-radius: 10px;
+    font-weight: 700;
 }

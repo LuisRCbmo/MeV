@@ -32,13 +32,19 @@ label{
 
 input{
     padding: 1%;
-    margin-top: 8%;
+    margin-top: 1%;
+    margin-bottom: 2.5%;
 }
 #boton{
+    margin-top: 4%;
     width: 50%;
+    height: 30px;
     background-color: #52658F;
     color: #E8E8E8;
-    margin-bottom: 2%;
+    margin-bottom: 10%;
+    font-size: 15px;
+    border-radius: 10px;
+    font-weight: 700;
 }
 a{
     color: #E9C893;
