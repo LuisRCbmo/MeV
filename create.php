@@ -1,6 +1,5 @@
 <?php
 include("conection.php");
-session_start();
 $user=$_POST['username'];
 $email=$_POST['email'];
 $pass=$_POST['pasw'];
