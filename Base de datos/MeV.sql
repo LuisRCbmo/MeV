@@ -168,7 +168,7 @@ alter table FAVORITE
       on delete restrict on update restrict;
 
 alter table FAVORITE
-   add constraint FK_FAVORITE_REFERENCE_STUDENT foreign key ("USER", CORREO)
+   add constraint FK_FAVORITE_REFERENCE_STUDENT foreign key ("USER", "USER")
       references STUDENT ("USER", CORREO)
       on delete restrict on update restrict;
 
