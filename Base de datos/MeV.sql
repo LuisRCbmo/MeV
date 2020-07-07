@@ -7,7 +7,7 @@
 /*==============================================================*/
 create table CLASS (
    COD_CLS              VARCHAR(30)          not null,
-   "GROUP"              INT4                 not null,
+   GROUP_OF             INT4                 not null,
    NAME                 VARCHAR(30)          not null,
    SEMESTER             VARCHAR(1)           not null,
    constraint PK_CLASS primary key (COD_CLS, "GROUP")
@@ -18,7 +18,7 @@ create table CLASS (
 /*==============================================================*/
 create unique index CLASS_PK on CLASS (
 COD_CLS,
-"GROUP"
+GROUP_OF
 );
 
 /*==============================================================*/
@@ -56,7 +56,7 @@ DAY
 /* Table: FAVORITE                                              */
 /*==============================================================*/
 create table FAVORITE (
-   "USER"               VARCHAR(30)          not null,
+   USERNAME             VARCHAR(30)          not null,
    COD_CL               VARCHAR(4)           not null
 );
 
@@ -65,7 +65,7 @@ create table FAVORITE (
 /*==============================================================*/
 create table SCHEDULE (
    COD_CLS              VARCHAR(30)          not null,
-   "GROUP"              INT4                 not null,
+   GROUP_OF              INT4                 not null,
    DAY                  VARCHAR(2)           not null,
    FULL_NAME            VARCHAR(50)          not null,
    COD_TI               INT4                 not null,
@@ -77,7 +77,7 @@ create table SCHEDULE (
 /*==============================================================*/
 create  index SCHEDULE_FK on SCHEDULE (
 COD_CLS,
-"GROUP"
+GROUP_OF
 );
 
 /*==============================================================*/
@@ -93,15 +93,15 @@ DAY
 create table STUDENT (
    CORREO               VARCHAR(60)          not null,
    PASSWORD             VARCHAR(200)         not null,
-   "USER"               VARCHAR(30)          not null,
-   constraint PK_STUDENT primary key ("USER", CORREO)
+   USERNAME               VARCHAR(30)          not null,
+   constraint PK_STUDENT primary key (USERNAME, CORREO)
 );
 
 /*==============================================================*/
 /* Index: STUDENT_PK                                            */
 /*==============================================================*/
 create unique index STUDENT_PK on STUDENT (
-"USER",
+USERNAME,
 CORREO
 );
 
@@ -109,16 +109,16 @@ CORREO
 /* Table: STUDENT_CLASS                                         */
 /*==============================================================*/
 create table STUDENT_CLASS (
-   "USER"               VARCHAR(30)          not null,
+   USERNAME             VARCHAR(30)          not null,
    COD_CLS              VARCHAR(30)          not null,
-   "GROUP"              INT4                 not null
+   GROUP_OF              INT4                 not null
 );
 
 /*==============================================================*/
 /* Index: STUDENT_CLASS_FK                                      */
 /*==============================================================*/
 create  index STUDENT_CLASS_FK on STUDENT_CLASS (
-"USER"
+USERNAME
 );
 
 /*==============================================================*/
@@ -126,7 +126,7 @@ create  index STUDENT_CLASS_FK on STUDENT_CLASS (
 /*==============================================================*/
 create  index STUDENT_CLASS2_FK on STUDENT_CLASS (
 COD_CLS,
-"GROUP"
+GROUP_OF
 );
 
 /*==============================================================*/
@@ -151,7 +151,7 @@ FULL_NAME
 create table TIME_OF (
    COD_TI               INT4                 not null,
    STARTS               TIME                 not null,
-   "END"                TIME                 not null,
+   ENDS                TIME                 not null,
    constraint PK_TIME primary key (COD_TI)
 );
 
@@ -168,8 +168,8 @@ alter table FAVORITE
       on delete restrict on update restrict;
 
 alter table FAVORITE
-   add constraint FK_FAVORITE_REFERENCE_STUDENT foreign key ("USER", "USER")
-      references STUDENT ("USER", CORREO)
+   add constraint FK_FAVORITE_REFERENCE_STUDENT foreign key (USERNAME, USERNAME)
+      references STUDENT (USERNAME, CORREO)
       on delete restrict on update restrict;
 
 alter table SCHEDULE
@@ -188,8 +188,8 @@ alter table SCHEDULE
       on delete restrict on update restrict;
 
 alter table SCHEDULE
-   add constraint FK_SCHEDULE_SCHEDULE_CLASS foreign key (COD_CLS, "GROUP")
-      references CLASS (COD_CLS, "GROUP")
+   add constraint FK_SCHEDULE_SCHEDULE_CLASS foreign key (COD_CLS, GROUP_OF)
+      references CLASS (COD_CLS, GROUP_OF)
       on delete restrict on update restrict;
 
 alter table SCHEDULE
@@ -198,12 +198,12 @@ alter table SCHEDULE
       on delete restrict on update restrict;
 
 alter table STUDENT_CLASS
-   add constraint FK_STUDENT__STUDENT_C_STUDENT foreign key ("USER", "USER")
-      references STUDENT ("USER", CORREO)
+   add constraint FK_STUDENT__STUDENT_C_STUDENT foreign key (USERNAME, USERNAME)
+      references STUDENT (USERNAME, CORREO)
       on delete restrict on update restrict;
 
 alter table STUDENT_CLASS
-   add constraint FK_STUDENT__STUDENT_C_CLASS foreign key (COD_CLS, "GROUP")
-      references CLASS (COD_CLS, "GROUP")
+   add constraint FK_STUDENT__STUDENT_C_CLASS foreign key (COD_CLS, GROUP_OF)
+      references CLASS (COD_CLS, GROUP_OF)
       on delete restrict on update restrict;
 
