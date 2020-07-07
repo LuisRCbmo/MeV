@@ -13,10 +13,12 @@
 - Node js
 - Power Designer
 - PostgreSQL
+- XAMP
 - Html
 - Css
 - JavaScript
 - SQL
+- PHP
 - Postman
 - MySQL (Comunity Server, Workbench)
 - MongoDB (Comunity Server, Compass Comunity)

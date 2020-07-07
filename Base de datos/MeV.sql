@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      PostgreSQL 8                                 */
-/* Created on:     2/7/2020 13:00:45                            */
+/* Created on:     6/7/2020 13:23:09                            */
 /*==============================================================*/
 /*==============================================================*/
 /* Table: CLASS                                                 */
@@ -84,7 +84,7 @@ DAY
 /*==============================================================*/
 create table STUDENT (
    CORREO               VARCHAR(60)          not null,
-   PASSWORD             VBIN3200             not null,
+   PASSWORD             VBIN                 not null,
    "USER"               VARCHAR(30)          not null,
    constraint PK_STUDENT primary key ("USER", CORREO)
 );
@@ -92,6 +92,11 @@ create table STUDENT (
 /*==============================================================*/
 /* Index: STUDENT_PK                                            */
 /*==============================================================*/
+create unique index STUDENT_PK on STUDENT (
+"USER",
+CORREO
+);
+
 /*==============================================================*/
 /* Table: STUDENT_CLASS                                         */
 /*==============================================================*/
@@ -99,13 +104,6 @@ create table STUDENT_CLASS (
    "USER"               VARCHAR(30)          not null,
    COD_CLS              VARCHAR(30)          not null,
    "GROUP"              INT4                 not null
-);
-
-/*==============================================================*/
-/* Index: STUDENT_CLASS_PK                                      */
-/*==============================================================*/
-create unique index STUDENT_CLASS_PK on STUDENT_CLASS (
-"USER"
 );
 
 /*==============================================================*/
