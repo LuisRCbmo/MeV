@@ -92,7 +92,7 @@ DAY
 /*==============================================================*/
 create table STUDENT (
    CORREO               VARCHAR(60)          not null,
-   PASSWORD             VBIN                 not null,
+   PASSWORD             BYTEA                 not null,
    "USER"               VARCHAR(30)          not null,
    constraint PK_STUDENT primary key ("USER", CORREO)
 );
