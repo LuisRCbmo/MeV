@@ -1,25 +1,56 @@
+
 body{
-    background-color: #F7F5E6;
+    background-image: url(../image/fondoheader.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+header{
+    padding: 5%;
+}
+@media screen and (min-width:800px){
+    li{
+        background-color: #caa659d5;
+    }
+    ul{
+        vertical-align: middle;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .wrapper{
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+        border-radius: 20px;
+        text-align: center;
+        background-color: rgba(59, 96, 121, 0.555);;
+        padding:3%;
+    }
+    
+    .user{
+        width: 100px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .user img{
+        width: 100%;
+    }
+    
+    #formulario {
+        padding: 3%;
+        background-color: rgba(158, 103, 20, 0.808);
+        margin-left: auto;
+        margin-right: auto;
+        width: 400px;
+        border-radius: 30px;
+        margin-top: 10px;
+        margin: auto;
+        width: max-content;
+    }
 }
 
-.wrapper{
-    margin: auto;
-    display: block;
-    color: #828081;
-    padding: 2%;
-    margin: 2%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    width: 25% ;
-    background-color: #E8E8E8;
-    width: max-content;
-}
 
-#formulario {
-    margin: auto;
-    width: max-content;
-}
 
 h2{
     font-size: 200%;
@@ -39,7 +70,7 @@ input{
     margin-top: 4%;
     width: 50%;
     height: 30px;
-    background-color: #52658F;
+    background-color: #612103d0;
     color: #E8E8E8;
     margin-bottom: 10%;
     font-size: 15px;
@@ -52,4 +83,49 @@ a{
 }
 a:hover{
     color: #333A56;
+}
+.details{
+    font-size: 20px;
+}
+
+
+
+@media screen and (max-width:799px){
+    form{
+        width: max-content;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top:4%;
+    }
+    .user{
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content;
+    }
+    .user img{
+        width: 40%;
+    }
+    #formulario{
+        padding-top: 10%;
+        padding-bottom: 10%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        background-color: rgba(158, 103, 20, 0.808);
+        border-radius: 30px;
+        margin-top: 10px;
+    }
+    .wrapper{
+        padding-top: 20px;
+        width: 80%;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 20px;
+        text-align: center;
+        background-color: rgba(59, 96, 121, 0.555);;
+        padding:3%;
+    }
+    
 }

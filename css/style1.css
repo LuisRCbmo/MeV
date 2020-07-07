@@ -3,175 +3,74 @@
     margin: 0%;
     overflow-x: hidden;
 }
+@font-face{
+    font-family: titulo;
+    src: url(../fonts/Galada-Regular.ttf);
+}
+
+@font-face{
+    font-family: navbar;
+    src: url(../fonts/Inconsolata-VariableFont_wdth\,wght.ttf);
+}
 
 body{
     background-color: #F7F5E6;
     visibility: visible !important; 
 }
-
-
-#imagebuscar {
-    padding: 2%;
-}
-
-#cabecera{
-    background-image: url("../image/vista.jpg");
-    height: 150px;
-    background-position-y: 50%;
-    overflow: hidden;;
-}
-
-@media screen and (min-width: 601px) {
-    h1 {
-      font-size: 700%;
-    }
-  }
-  
-  /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
-  @media screen and (max-width: 600px) {
-    h1 {
-      font-size: 40px;
-    }
-  }
-#header{
-    height: 200%;
+header{
     padding: 3%;
-    color:#e8e8e8;
-    display: flex;
-    background-color: #333A56;
-    margin-left: auto;
-    margin-right: auto;
+    background-image: url(../image/fondoheader.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
-#titulo{
-    margin-left: 3%;
-    height: 100%;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-@media screen and (min-width: 601px) {
-    #logo {
-      width: 15%;
-    }
-  }
-  
-  /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
-  @media screen and (max-width: 600px) {
-    #logo {
-      width: 25%;
-    }
-  }
-
-
-@media screen and (min-width: 601px) {
-    #nav {
-        min-width: 50%;
-        width: 100%;
-        background-color: 	#131731c0;
-        height: 45%;
-        font-size: 18px;
-    }
-  }
-  
-  /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
-  @media screen and (max-width: 600px) {
-    #nav {
-        min-width: 25%;
-        width: 100%;
-        background-color: 	#131731c0;
-        height: 30%;
-        font-size: 15px;
-    }
-  }
-
-#nav ul{
-    width: max-content;
-    margin-left: auto;
-    margin-right: auto;
-    list-style: none;
-    text-decoration: none;
-}
-
-#nav > ul > li{
-	line-height: 40px;
-    float: left;
-    text-align: center;
-	transition: all 800ms;
-	display: block;
-}
-
-#nav > ul > li a{
-    text-align: center;
-    padding-left: 30px;
-    padding-right: 30px;
-	color: #e8e8e8;
-	text-decoration: none;
-}
-
-#nav > ul > li > a:first-child{
-    border-left: 3px solid #e8e8e8;
-}
-
-#nav > ul > li:hover{
-    background-color: #333A56;
-	box-shadow: 0px 0px 4px  #333A56;
-	color: azure;
-}
-#nav a:hover {
-	color: azure;
-	
-}
-
-
-#deep p{
-    font-size: 100%;
-}
-
-.social{
-    display: flex;
-    justify-content: center;
-}
-
-#deep{
-    background-color: #e8e8e8;
-    height: 10%;
-    bottom: 0;
-}
-
-#deep p {
-    padding: 0%;
-    margin: 0%;
-    color: black;
-    text-align: center;
-}
-
-#icon{
-    margin-right: 2.5%;
-    margin-left: 2.5%;
-    margin-bottom: 1%;
-}
-
-footer div {
-    text-align: center;
-    background-color: #333A56;
+.cabecera{
     margin: 0;
     padding: 0;
+    text-align: center;
+    font-size: 4vw;
+}
+h1{
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: titulo;
+    width: max-content;
+}
+@media screen and (max-width:800px) {
+    .cabecera img{
+        width: 50%;
+    }
+    .cabecera > h1{
+        font-size: 11vw;
+        padding-left: 0%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
-footer div p {
-    color: #F7F5E6;
-    text-align: center;
-    font-size: 200%;
+.cabecera > img{
+    margin-bottom: 0;
+    padding-bottom: 0%;
+}
+
+
+.wrapper{
+    background-color: #c5dfe2;
     padding-top: 2%;
     padding-bottom: 2%;
-    margin-top: 0%;
+    z-index: 1;
+}
+@media screen and (max-width:800px){
+    .wrapper{
+        background-color: #c5dfe2;
+        padding: 0;
+        z-index: 1;
+    }    
 }
 
 footer{
-    display: block;
-    margin:0;
-    padding:0;
-    border:0;
-    display: block;
-    width: 100%;
+    background-image: url(../image/fondoheader.jpg);
+background-size: cover;
+display: block;
 }

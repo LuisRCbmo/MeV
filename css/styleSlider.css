@@ -1,36 +1,60 @@
 * {box-sizing:border-box}
 
-/* Slideshow container */
 .slideshow-container {
+
   max-width: 100%;
   position: relative;
   margin: auto;
   overflow: hidden;
 }
 
-/* Hide the images by default */
 .mySlides {
+  margin-left: auto;
+  margin-right: auto;
   overflow: hidden;
   display: none;
-  height: 400px;
+  height: 600px;
+  background-image: url(../image/vista.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:90%;
+  height:600px;
+  line-height:300px;
+  text-align:center;
 }
-.text {
-  position: absolute;
-  margin-top: auto;
+@media screen and (max-width:800px){
+  .mySlides {
+    overflow: hidden;
+    display: none;
+    height: 600px;
+    background-image: url(../image/vista.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:100%;
+    height:500px;
+    line-height:300px;
+    text-align:center;
+  }
+}
+.mySlides>.text {
+  margin-top: 10%;
   margin-left: auto;
   color: aliceblue;
   width: 100%;
-  font-size: 60px;
-  text-align: center;
-  vertical-align: auto;
+  font-size: 4vw;
+  text-align: center;		
+  display:inline-block;
+  vertical-align: middle;
+  line-height:normal;
+  background-color: #05010181;
 }
 
-/* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
   height: 15px;
   width: 15px;
   margin: 0 2px;
+  margin-top: 2%;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
@@ -41,7 +65,6 @@
   background-color: #717171;
 }
 
-/* Fading animation */
 .fade {
   -webkit-animation-name: fade;
   -webkit-animation-duration: 1.5s;

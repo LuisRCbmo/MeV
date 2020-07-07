@@ -1,0 +1,90 @@
+footer div p {
+    margin-left: auto;
+    margin-right: auto;
+    width: max-content;
+    color: #1d2f33;
+    text-align: center;
+    font-size: 3vw;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-top: 0%;
+}
+
+@media screen and (max-width:800px){
+    footer div p {
+        color: #1d2f33;
+        text-align: center;
+        font-size: 4vw;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        margin-top: 0%;
+    }
+}
+
+
+.deep p{
+    font-size: 100%;
+}
+
+.social{
+    display: flex;
+    justify-content: center;
+}
+
+#deep{
+    background-color: #e8e8e8;
+    height: 10%;
+    bottom: 0;
+}
+
+#deep p {
+    padding: 0%;
+    margin: 0%;
+    color: black;
+    font-size: 1vw;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#icon{
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+    margin-bottom: 1%;
+    width: 100px;
+}
+
+footer div {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+footer div .social{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+footer{
+    margin:0;
+    padding:0;
+    border:0;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+#imagebuscar{
+    width: min-content;
+    padding-top: 5%;
+}
+@media screen and (max-width: 800px) {
+     #icon{
+        width: 100px;
+    }
+    #icon img{
+        width: 80%;
+    }
+    #deep p{
+        font-size: 15px;
+    }
+}
