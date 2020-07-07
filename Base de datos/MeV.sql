@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      PostgreSQL 8                                 */
-/* Created on:     6/7/2020 13:23:09                            */
+/* Created on:     7/7/2020 10:57:41                            */
 /*==============================================================*/
 /*==============================================================*/
 /* Table: CLASS                                                 */
@@ -53,6 +53,14 @@ DAY
 );
 
 /*==============================================================*/
+/* Table: FAVORITE                                              */
+/*==============================================================*/
+create table FAVORITE (
+   "USER"               VARCHAR(30)          not null,
+   COD_CL               VARCHAR(4)           not null
+);
+
+/*==============================================================*/
 /* Table: SCHEDULE                                              */
 /*==============================================================*/
 create table SCHEDULE (
@@ -67,7 +75,7 @@ create table SCHEDULE (
 /*==============================================================*/
 /* Index: SCHEDULE_PK                                           */
 /*==============================================================*/
-create  index SCHEDULE_PK on SCHEDULE (
+create  index SCHEDULE_FK on SCHEDULE (
 COD_CLS,
 "GROUP"
 );
@@ -153,6 +161,16 @@ create table TIME_OF (
 create unique index TIME_OF_PK on TIME_OF (
 COD_TI
 );
+
+alter table FAVORITE
+   add constraint FK_FAVORITE_REFERENCE_CLASSROO foreign key (COD_CL)
+      references CLASSROOM (COD_CL)
+      on delete restrict on update restrict;
+
+alter table FAVORITE
+   add constraint FK_FAVORITE_REFERENCE_STUDENT foreign key ("USER", CORREO)
+      references STUDENT ("USER", CORREO)
+      on delete restrict on update restrict;
 
 alter table SCHEDULE
    add constraint FK_SCHEDULE_REFERENCE_TIME_OF foreign key (COD_TI)
