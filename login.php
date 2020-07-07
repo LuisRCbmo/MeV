@@ -5,15 +5,19 @@ session_start();
 $user=$_POST['username'];
 $psw=$_POST['pasw'];
 
-$query= 'SELECT * FROM student WHERE "USER"= $user AND pasword=$psw';
+$query= "SELECT * FROM student WHERE username= '$user' AND password='$psw'";
 $result=pg_query($db,$query) or die("no se puede realizar la consulta");
 
-if($result->num_rows > 0){
-    echo'existe el usuario';
-    
-
+$rows= pg_num_rows($result);
+if($rows>0){
+    $row=pg_fetch_row($result);
+    $_SESSION["id"]=$row[0];
+    $_SESSION["password"]=$row[1];
+    $_SESSION["username"]=$row[2];
+    echo "<head><meta http-equiv='refresh' content='0; url=index.html'></head>";
 }else{
-    echo'ingrese un usuario valido';
+    echo'usuario o contraseña incorrecta';
 }
+
 
 ?>
