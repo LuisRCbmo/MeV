@@ -4,35 +4,44 @@
         <meta charset="utf-8">
         <title>MeV</title>
         <link rel="icon" href="image/favicon.png" type="image/png">
+        <link rel="stylesheet" href="css/navbar.css">
+        <link rel="stylesheet" href="fonts/style.css">
+        <link rel="stylesheet" href="css/footer.css">
         <link rel="stylesheet" href="css/style1.css">
         <link rel="stylesheet" href="css/styleSlider.css">
         <script src="js/script1.js"></script>
+        <script src="js/navbar.js"></script>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     </head>
     <body>
         <header>
-            <div id="header">
-                <div id="logo"><img width="100%" src="image/logo.png" alt="logo"></div>
-                <div id="titulo"><h1>Movimiento e Vida</h1></div>
+            <div class="cabecera">
+                <img width="29%" src="image/logo2.png" alt="logo">
+                <h1>Movimiento é Vida</h1>
             </div>
-            <nav id="nav">
-                <ul>
-                    <li><a href="index.html" >Inicio</a></li>
-                    <li><a href="search.html">Buscar Aula</a></li>
-                    <li><a href="map.html">Mapa</a></li>
-                    <li><a href="login.html">Iniciar Sesion</a></li>
-                </ul>
-            </nav>
+            <div class="menu_bar">
+                <a href="#" class="bt-menu"><span class="icon-menu"></span>Menu</a>
+            </div>
+            <div class="navegador">
+                <nav class="nav">
+                    <ul class="main-nav" id="js-menu">
+                        <li><a href="index.html" >Inicio</a></li>
+                        <li><a href="search.html">Buscar Aula</a></li>
+                        <li><a href="map.html">Mapa</a></li>
+                        <li><a href="login.html">Iniciar Sesion</a></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
+        
         <div class="wrapper">
             <div class="slideshow-container">
                     <div class="mySlides fade">
-                        <img src="https://boredhq.com/wp-content/uploads/2019/06/1561325565_maxresdefault-277x156.jpg" style="width:100%">
-                        <div class="text">Caption Text</div>
+                        <div class="text"><p>MeV es una pagina que esta pensada en toda la poblacion estudiantil, la cual muchas veces tiene complicaciones al momento de dirigirse al aula que necesitan llegar</p></div>
                     </div>
                     
                     <div class="mySlides fade">
-                            <img src="image/vista.jpg" style="width:100%">
-                            <div class="text">Caption Two</div>
+                        <div class="text"><p>MeV es una pagina que esta pensada en toda la poblacion estudiantil, la cual muchas veces tiene complicaciones al momento de dirigirse al aula que necesitan llegar</p></div>
                     </div>
                     
                     <div class="mySlides fade">
@@ -50,15 +59,16 @@
             var slideIndex = 1;
             showSlides(slideIndex);
         </script>
+
         <footer>    
             <div>
                 <p>For You <br>
                 Made with ♡ </p>
                 <div class="social">
-                    <div id="icon"><a href=""><img width="50" src="image/face.png" alt="Facebook"></a></div>
-                    <div id="icon"><a href=""><img width="50" src="image/twitter.png" alt="Twitter"></a></div>
-                    <div id="icon"><a href=""><img width="50" src="image/insta.png" alt="Instagram"></a></div>
-                    <div id="icon"><a href=""><img width="50" src="image/wp.png" alt="WhatsApp"></a></div>
+                    <div id="icon"><a href=""><img width="70" src="image/face.png" alt="Facebook"></a></div>
+                    <div id="icon"><a href=""><img width="70" src="image/twitter.png" alt="Twitter"></a></div>
+                    <div id="icon"><a href=""><img width="70" src="image/insta.png" alt="Instagram"></a></div>
+                    <div id="icon"><a href=""><img width="70" src="image/wp.png" alt="WhatsApp"></a></div>
                 </div>
             </div>
             <div id="deep">
