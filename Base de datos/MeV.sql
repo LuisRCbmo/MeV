@@ -10,7 +10,7 @@ create table CLASS (
    GROUP_OF             INT4                 not null,
    NAME                 VARCHAR(30)          not null,
    SEMESTER             VARCHAR(1)           not null,
-   constraint PK_CLASS primary key (COD_CLS, "GROUP")
+   constraint PK_CLASS primary key (COD_CLS, GROUP_OF)
 );
 
 /*==============================================================*/
