@@ -7,8 +7,7 @@ $rpass=$_POST['repasw'];
 
 if($user != "" && $email!= "" && $pass!= "" && $rpass!= ""){
     if($pass === $rpass){
-        $clave=md5('$pass');
-        $datos="INSERT INTO student VALUES('$email','$clave','$user')";
+        $datos="INSERT INTO student VALUES('$email','$pass','$user')";
         $conectar=pg_query($db,$datos) or die ("error al introducir datos");
         echo "<head><meta http-equiv='refresh' content='1; url=login.html'></head>";
     }else{
