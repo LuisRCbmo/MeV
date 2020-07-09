@@ -8,7 +8,7 @@
 create table CLASS (
    COD_CLS              VARCHAR(30)          not null,
    GROUP_OF             INT4                 not null,
-   NAME                 VARCHAR(30)          not null,
+   NAME                 VARCHAR(50)          not null,
    SEMESTER             VARCHAR(1)           not null,
    constraint PK_CLASS primary key (COD_CLS, GROUP_OF)
 );
