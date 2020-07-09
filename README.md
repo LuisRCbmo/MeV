@@ -19,9 +19,6 @@
 - JavaScript
 - SQL
 - PHP
-- Postman
-- MySQL (Comunity Server, Workbench)
-- MongoDB (Comunity Server, Compass Comunity)
 - Figma: 
 	opcion 1: https://www.figma.com/file/8sbKAP9SagpVtinD3iRPRR/MeV?node-id=0%3A1
 	opcion 2: https://www.figma.com/file/ITV64SAL6R9kA8vIrSS0WL/Untitled?node-id=10%3A89	
