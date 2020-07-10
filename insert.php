@@ -11,10 +11,36 @@ include("conection.php");
         <link rel="stylesheet" href="fonts/style.css">
         <link rel="stylesheet" href="css/footer.css">
         <link rel="stylesheet" href="css/style2.css">
-        <link rel="stylesheet" href="addStyle.css">
+        <link rel="stylesheet" href="css/addStyle.css">
         <script src="js/navbar.js"></script>
         <script src="http://code.jquery.com/jque..."></script>
         <script language="javascript" src="js/jquery-3.5.1.js"></script>
+        <script>
+          $(document).ready(function(){
+              $('#semestres').change(function(){
+                  $.ajax({
+                      data: "semestre="+$('#semestres').val(),
+                      url: 'getsubjects.php',
+                      type: 'post',
+                      success: function(response){
+                          $("#materias").html(response);
+                      }
+                  });
+              })
+          })</script>
+          <script>
+          $(document).ready(function(){
+              $('#materias').change(function(){
+                  $.ajax({
+                      data: "materia="+$('#materias').val(),
+                      url: 'getgroups.php',
+                      type: 'post',
+                      success: function(response){
+                          $("#grupos").html(response);
+                      }
+                  });
+              })
+          })</script>
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     </head>
     <body>
@@ -34,11 +60,11 @@ include("conection.php");
         </header>
         <div class="wrapper">
             <h2>Añadir materia</h2>
-            <form action="">
+            <form action="select.php" method="POST">
                 <label for="">Carrera: </label>
-                <select name="" id="carreras"><option value="">Informatica</option></select><br>
+                <select name="carreras" id="carreras"><option value="">Informatica</option></select><br>
                 <label for="">Semestre:</label>
-                <select name="" id="semestres">
+                <select name="semestres" id="semestres">
                 <?php
                    $info_sem="SELECT DISTINCT semester FROM class ORDER BY semester ASC";
                    $get_sem=pg_query($db,$info_sem);
@@ -48,9 +74,10 @@ include("conection.php");
                 ?>
                 </select><br>
                 <label for="">Materia: </label>
-                <select name="" id="materias"><option value="">calculo</option></select><br>
+                <select name="materias" id="materias"><option value="">Seleccione materia</option></select><br>
+                
                 <label for="">Grupo: </label>
-                <select name="" id="grupos"><option value="">1</option></select><br>
+                <select name="grupos" id="grupos"><option value="">Seleccione grupo</option></select><br>
                 <input id="add" type="button" value="Agregar materia">
             </form>
         </div>
@@ -71,17 +98,3 @@ include("conection.php");
         </footer>
     </body>
 </html>
-
-<?php
-$info_sem="SELECT semester FROM class";
-$get_classes=pg_query($db,$info_sem);
-while($cl=pg_fetch_row($get_classes)){
-    $i=0;
-    if($cl[$i]===$cl[$i+1]){
-    }else{
-        echo "<option value='".cl[$i]."'>".cl[$i]."</option>";
-    }
-    $i=$i+1;
-}
-
-?>
