@@ -101,7 +101,8 @@ create table STUDENT (
 /* Index: STUDENT_PK                                            */
 /*==============================================================*/
 create unique index STUDENT_PK on STUDENT (
-USERNAME,
+USERNAME);
+create unique index STUDENT_PK2 on STUDENT(
 CORREO
 );
 
@@ -198,8 +199,8 @@ alter table SCHEDULE
       on delete restrict on update restrict;
 
 alter table STUDENT_CLASS
-   add constraint FK_STUDENT__STUDENT_C_STUDENT foreign key (USERNAME, USERNAME)
-      references STUDENT (USERNAME, CORREO)
+   add constraint FK_STUDENT__STUDENT_C_STUDENT foreign key (USERNAME)
+      references STUDENT (USERNAME)
       on delete restrict on update restrict;
 
 alter table STUDENT_CLASS
