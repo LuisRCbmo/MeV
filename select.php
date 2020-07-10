@@ -1,5 +1,6 @@
 <?php
 include("conection.php");
+session_start();
 
 $Semester=$_POST['semestres'];
 $Materia=$_POST['materias'];

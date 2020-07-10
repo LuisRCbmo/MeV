@@ -30,29 +30,29 @@
         <div class="wrapper">
             <h2>Horario</h2>
             <ul class="horario"></ul>
-            <input type="button" value="Añadir Materias">
+            <li><a href="insert.php"><input type="button" value="Añadir Materias"></a></li>
 <?php
 include("conection.php");
-include("login.php");
-
+session_start();
 $use_by=$_SESSION["username"];
+
 $info="SELECT name as clase, full_name as docente,starts as empieza,ends as termina, day as dia,
 cod_cl as aula
 from student_class,class,schedule, time_of
 where student_class.cod_cls=class.cod_cls and student_class.group_of=class.group_of
 and class.cod_cls=schedule.cod_cls and class.group_of=schedule.group_of 
 and student_class.cod_cls=schedule.cod_cls and student_class.group_of=schedule.group_of
-and schedule.cod_ti=time_of.cod_ti AND username=garymamani";
+and schedule.cod_ti=time_of.cod_ti AND username='$use_by'";
 
 $clases= pg_query($db,$info);
 
-while($subjets=pg_fetch_array($clases)){
-    echo $subjects['name'];
-    echo $subjects['full_name'];
-    echo $subjects['starts'];
-    echo $subjects['ends'];
-    echo $subjects['day'];
-    echo $subjects['cod_cl'];
+while($subjects=pg_fetch_array($clases)){
+    echo $subjects['clase'];
+    echo $subjects['docente'];
+    echo $subjects['empieza'];
+    echo $subjects['termina'];
+    echo $subjects['dia'];
+    echo $subjects['aula'];
 }
 ?>
         </div>
