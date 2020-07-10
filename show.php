@@ -12,5 +12,13 @@ and student_class.cod_cls=schedule.cod_cls and student_class.group_of=schedule.g
 and schedule.cod_ti=time_of.cod_ti AND username='$use_by'";
 
 $clases= pg_query($db,$info);
-$subjects=pg_fetch_array($clases);
+
+while($subjets=pg_fetch_array($clases)){
+    echo $subjects['name'];
+    echo $subjects['full_name'];
+    echo $subjects['starts'];
+    echo $subjects['ends'];
+    echo $subjects['day'];
+    echo $subjects['cod_cl'];
+}
 ?>
