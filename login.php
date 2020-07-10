@@ -14,10 +14,9 @@ if($rows>0){
     $_SESSION["id"]=$row[0];
     $_SESSION["password"]=$row[1];
     $_SESSION["username"]=$row[2];
-    echo "<head><meta http-equiv='refresh' content='0; url=userview.html'></head>";
+    echo "<head><meta http-equiv='refresh' content='0; url=show.php'></head>";
 }else{
     echo'usuario o contraseña incorrecta';
 }
-
 
 ?>
