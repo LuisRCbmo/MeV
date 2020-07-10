@@ -1,4 +1,6 @@
-* {box-sizing:border-box}
+* {box-sizing:border-box;
+    font-family: 7w7;
+}
 
 .slideshow-container {
 

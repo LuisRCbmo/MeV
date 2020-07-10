@@ -13,6 +13,11 @@
     src: url(../fonts/Inconsolata-VariableFont_wdth\,wght.ttf);
 }
 
+@font-face{
+    font-family: 7w7;
+    src: url(../fonts/Cinzel-Regular.ttf);
+}
+
 body{
     background-color: #F7F5E6;
     visibility: visible !important; 

@@ -4,20 +4,26 @@
         <meta charset="utf-8">
         <title>Recuperar cuenta</title>
         <link rel="icon" href="image/favicon.png" type="image/png">
-        <link rel="stylesheet" href="css/style1.css">
         <link rel="stylesheet" href="css/style2.css">
+        <link rel="stylesheet" href="css/footer.css">
+        <link rel="stylesheet" href="css/navbar.css">
+        <script src="js/navbar.js"></script>
     </head>
     <body>
         <header> 
-            <div id="cabecera" ></div>
-            <nav id="nav">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="search.html">Buscar Aula</a></li>
-                <li><a href="map.html">Mapa</a></li>
-                <li><a href="login.html">Iniciar Sesion</a></li>
-            </ul>
-        </nav>
+            <div class="menu_bar">
+                <a href="#" class="bt-menu"><span class="icon-menu"></span>Menu</a>
+            </div>
+            <div class="navegador">
+                <nav class="nav">
+                    <ul class="main-nav" id="js-menu">
+                        <li><a href="index.html" >Inicio</a></li>
+                        <li><a href="search.html">Buscar Aula</a></li>
+                        <li><a href="map.html">Mapa</a></li>
+                        <li><a href="login.html">Iniciar Sesion</a></li>
+                    </ul>
+                </nav>
+            </div>
     </header>
         <div class="wrapper">
             <div id="formulario">
@@ -45,5 +51,10 @@
                 <p>© Copyright TRN Studio Ltd. 2020. · All rights reserved. Registered in Bolivia · Company number +591 65385951</p>
             </div>
         </footer>
+        <style>
+            .wrapper {
+                height:400px;
+            }
+        </style>
     </body>
 </html>
