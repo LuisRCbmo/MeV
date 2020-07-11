@@ -17,6 +17,22 @@
   .wrapper {
       width: 80%;
   }
+
+#names {
+  margin: 5%;
+  text-align: justify;
+  font-size: 25px;
+}
+
+#names h2{
+  text-align: center;
+  font-size: 50px;
+}
+
+#name ul li p {
+  font-size: 20px;
+}
+
   @media screen and (max-width:799){
       .wrapper{
         padding: 1%;
