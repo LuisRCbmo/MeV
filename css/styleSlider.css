@@ -16,7 +16,7 @@
   margin-right: auto;
   overflow: hidden;
   display: none;
-  height: 600px;
+  height: 600px; 
   background-repeat: no-repeat;
   background-size: cover;
   width:100%;
@@ -121,7 +121,7 @@
 }
 
 .active, .dot:hover {
-  background-color: #717171;
+  background-color: #000000;
 }
 
 .fade {

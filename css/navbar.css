@@ -45,24 +45,31 @@ nav a:hover {
 	color: #dbc665;
 	
 }
-  @media screen and (max-width: 991px) {
+	@media screen and (min-width:800px) {
+		.navbar-toggler{
+			display: none;
+		}
+	}
+  @media screen and (max-width: 799px) {
 	.navbar ul {
 		padding: 0 10px;
 	  }
 	  .navbar ul li a {
 		min-width: 100px;
 		padding: 0 20px;
+		color: thistle;
 	  }
 	}
 	
 	@media (max-width: 767px) {
-	  .navbar {
+		
+		.navbar {
 		padding: 0;
 	  }
 	  .navbar ul {
 		width: 100%;
 		padding: 0;
-		background-color: rgba(0,0,0,0.9);
+		background-color: #293133d3;
 		height: auto;
 		max-height: 0;
 		overflow: hidden;
@@ -87,7 +94,7 @@ nav a:hover {
 		right: 20px;
 		background-color: transparent;
 		color: #fff;
-		border: 3px solid rgb(0, 0, 0);
+		border: 3px solid white;
 		outline: none;
 		padding: 0 5px;
 		cursor: pointer;
