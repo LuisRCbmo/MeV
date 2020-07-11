@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="fonts/style.css">
         <link rel="stylesheet" href="css/footer.css">
         <link rel="stylesheet" href="css/style2.css">
+        <link rel="stylesheet" href="css/tableStyle.css">
         <script src="js/navbar.js"></script>
         <script src="http://code.jquery.com/jque..."></script>
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -30,7 +31,17 @@
         <div class="wrapper">
             <h2>Horario</h2>
             <ul class="horario"></ul>
-            <li><a href="insert.php"><input type="button" value="Añadir Materias"></a></li>
+            <a href="insert.php"><input type="button" value="Añadir Materias"></a>
+            <table id="dat">
+            <thead><tr>
+            <td>clase</td>
+            <td>docente</td>
+            <td>empieza</td>
+            <td>termina</td>
+            <td>dia</td>
+            <td>aula</td>
+            </tr></thead>
+            <tbody>
 <?php
 include("conection.php");
 session_start();
@@ -47,14 +58,19 @@ and schedule.cod_ti=time_of.cod_ti AND username='$use_by'";
 $clases= pg_query($db,$info);
 
 while($subjects=pg_fetch_array($clases)){
-    echo $subjects['clase'];
-    echo $subjects['docente'];
-    echo $subjects['empieza'];
-    echo $subjects['termina'];
-    echo $subjects['dia'];
-    echo $subjects['aula'];
+    ?>
+    <tr>
+        <td><?php echo $subjects['clase']; ?></td>
+        <td><?php echo $subjects['docente']; ?></td>
+        <td><?php echo $subjects['empieza']; ?></td>
+        <td><?php echo $subjects['termina']; ?></td>
+        <td><?php echo $subjects['dia']; ?></td>
+        <td><?php echo $subjects['aula']; ?></td>
+    </tr>
+    <?php
 }
 ?>
+            <tbody></table>
         </div>
         <footer>
             <div>

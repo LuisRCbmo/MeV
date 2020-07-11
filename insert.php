@@ -1,5 +1,6 @@
 <?php
 include("conection.php");
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -28,8 +29,7 @@ include("conection.php");
                   });
               })
           })</script>
-          <script>
-          $(document).ready(function(){
+          <script>$(document).ready(function(){
               $('#materias').change(function(){
                   $.ajax({
                       data: "materia="+$('#materias').val(),
@@ -78,7 +78,7 @@ include("conection.php");
                 
                 <label for="">Grupo: </label>
                 <select name="grupos" id="grupos"><option value="">Seleccione grupo</option></select><br>
-                <input id="add" type="button" value="Agregar materia">
+                <input id="boton" type="submit" value="Agregar materia">
             </form>
         </div>
         <footer>
