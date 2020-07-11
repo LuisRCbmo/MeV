@@ -2,41 +2,55 @@
 <html lang="es">
     <head>
         <meta charset="utf-8">
-        <title>Login</title>
+        <title>Ruta</title>
         <link rel="icon" href="image/favicon.png" type="image/png">
+        <link rel="stylesheet" href="css/styleIrA.css">
         <link rel="stylesheet" href="css/navbar.css">
         <link rel="stylesheet" href="fonts/style.css">
         <link rel="stylesheet" href="css/footer.css">
         <link rel="stylesheet" href="css/style2.css">
+        <link rel="stylesheet" href="css/mapstyle.css">
+        <link rel="stylesheet" href="css/modelviewer.css">
         <script src="js/navbar.js"></script>
-        <script src="http://code.jquery.com/jque..."></script>
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script>
+        <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+        <script src="https://unpkg.com/resize-observer-polyfill@1.5.0/dist/ResizeObserver.js"></script>
+        <script src="https://unpkg.com/@magicleap/prismatic/prismatic.min.js"></script>
     </head>
     <body>
-        <header>
+        <header> 
             <div class="menu_bar">
                 <a href="#" class="bt-menu"><span class="icon-menu"></span>Menu</a>
             </div>
             <div class="navegador">
                 <nav class="nav">
                     <ul class="main-nav" id="js-menu">
+                        <li><a href="index.html" >Inicio</a></li>
                         <li><a href="search.html">Buscar Aula</a></li>
                         <li><a href="map.html">Mapa</a></li>
-                        <li><a href="login.html">Cerrar Sesion</a></li>
+                        <li><a href="login.html">Iniciar Sesion</a></li>
                     </ul>
                 </nav>
             </div>
-        </header>
+    </header>
         <div class="wrapper">
-            <h2>Horario</h2>
-            <ul class="horario"></ul>
-            <input type="button" value="Añadir Materias">
-
+            <div id="card">
+                
+                <model-viewer src="<!--Gary aqui viene el coso :Dxd-->"
+                    background-color="#ff0000"
+                    alt="Wooden Eagle"
+                    shadow-intensity="2"
+                    camera-controls
+                    auto-rotate ar>
+                </model-viewer>
+            </div>
+            <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
         </div>
         <footer>
             <div>
-                <p>For You <br>
-                Made with ♡ </p>
+                <p>For You </p>
+                <p>Made with ♡ </p>
                 <div class="social">
                     <div id="icon"><a href="meme.html"><img width="70" src="image/face.png" alt="Facebook"></a></div>
                     <div id="icon"><a href="meme.html"><img width="70" src="image/twitter.png" alt="Twitter"></a></div>

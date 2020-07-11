@@ -10,6 +10,7 @@ header{
 @media screen and (min-width:800px){
     li{
         background-color: #caa659d5;
+        border: 2px solid black;
     }
     ul{
         vertical-align: middle;
