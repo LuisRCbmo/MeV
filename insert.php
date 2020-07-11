@@ -1,7 +1,7 @@
 <?php
 include("conection.php");
 session_start();
-?>
+?> 
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -45,18 +45,18 @@ session_start();
     </head>
     <body>
         <header>
-            <div class="menu_bar">
-                <a href="#" class="bt-menu"><span class="icon-menu"></span>Menu</a>
-            </div>
-            <div class="navegador">
-                <nav class="nav">
-                    <ul class="main-nav" id="js-menu">
+            <nav class="navbar">
+                <a href="#" class="navbar-brand">
+                    <ul class="nav-links">
+                        <li><a href="index.html" >Inicio</a></li>
                         <li><a href="search.html">Buscar Aula</a></li>
                         <li><a href="map.html">Mapa</a></li>
                         <li><a href="login.html">Cerrar Sesion</a></li>
                     </ul>
-                </nav>
-            </div>
+                    <button class="navbar-toggler">
+                        <span></span>
+                      </button>
+            </nav>
         </header>
         <div class="wrapper">
             <h2>Añadir materia</h2>
@@ -86,10 +86,10 @@ session_start();
                 <p>For You <br>
                 Made with ♡ </p>
                 <div class="social">
-                    <div id="icon"><a href=""><img width="70" src="image/face.png" alt="Facebook"></a></div>
-                    <div id="icon"><a href=""><img width="70" src="image/twitter.png" alt="Twitter"></a></div>
-                    <div id="icon"><a href=""><img width="70" src="image/insta.png" alt="Instagram"></a></div>
-                    <div id="icon"><a href=""><img width="70" src="image/wp.png" alt="WhatsApp"></a></div>
+                    <div id="icon"><a href="meme.html"><img width="70" src="image/face.png" alt="Facebook"></a></div>
+                    <div id="icon"><a href="meme.html"><img width="70" src="image/twitter.png" alt="Twitter"></a></div>
+                    <div id="icon"><a href="meme.html"><img width="70" src="image/insta.png" alt="Instagram"></a></div>
+                    <div id="icon"><a href="meme.html"><img width="70" src="image/wp.png" alt="WhatsApp"></a></div>
                 </div>
             </div>
             <div id="deep">
