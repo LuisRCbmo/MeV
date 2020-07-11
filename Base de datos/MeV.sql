@@ -26,7 +26,7 @@ GROUP_OF
 /*==============================================================*/
 create table CLASSROOM (
    COD_CL               VARCHAR(4)           not null,
-   UBICATION            VARCHAR(100)         not null,
+   UBICATION            VARCHAR(10)         not null,
    constraint PK_CLASSROOM primary key (COD_CL)
 );
 
@@ -37,6 +37,12 @@ create unique index CLASSROOM_PK on CLASSROOM (
 COD_CL
 );
 
+CREATE table C_MAP (
+   UBICATION              VARCHAR(10)        NOT NULL,
+   DESTINY                VARCHAR(10)        NOT NULL,
+   COD_MAP                VARCHAR(500)       NOT NULL,
+   constraint PK_MAP primary key (COD_MAP)
+);
 /*==============================================================*/
 /* Table: DAY                                                   */
 /*==============================================================*/
