@@ -1,18 +1,16 @@
 <?php
-
 include("conection.php");
-include("login.php");
-session_star();
+session_start();
 
-$consulta="SELECT name as clase, full_name as docente,starts as empieza,ends as termina, day as dia,
-cod_cl as aula
-from student_class,class,schedule, time_of
-where student_class.cod_cls=class.cod_cls and student_class.group_of=class.group_of
-and class.cod_cls=schedule.cod_cls and class.group_of=schedule.group_of 
-and student_class.cod_cls=schedule.cod_cls and student_class.group_of=schedule.group_of
-and schedule.cod_ti=time_of.cod_ti
-AND username='$user'";
+$Carrera=$_POST['carreras'];
+$Semester=$_POST['semestres'];
+$Materia=$_POST['materias'];
+$Grupo=$_POST['grupos'];
 
-$res= pg_query($db,$consulta) or die("error al consultar");
+$use_by=$_SESSION['username'];
+
+$Sche="INSERT INTO student_class VALUES('$use_by','$Materia','$Grupo')";
+$upload=pg_query($db,$Sche) or die ("error al introducir datos");
+echo "<head><meta http-equiv='refresh' content='1; url=show.php'></head>";
 
 ?>
