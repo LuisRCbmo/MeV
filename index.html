@@ -10,7 +10,6 @@
         <link rel="stylesheet" href="css/style1.css">
         <link rel="stylesheet" href="css/styleSlider.css">
         <script src="js/script1.js"></script>
-        <script src="js/navbar.js"></script>
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     </head>
     <body>
@@ -19,34 +18,39 @@
                 <img width="29%" src="image/logo2.png" alt="logo">
                 <h1>Movimiento é Vida</h1>
             </div>
-            <div class="menu_bar">
-                <a href="#" class="bt-menu"><span class="icon-menu"></span>Menu</a>
-            </div>
-            <div class="navegador">
-                <nav class="nav">
-                    <ul class="main-nav" id="js-menu">
+            <nav class="navbar">
+                <a href="#" class="navbar-brand">
+                    <ul class="nav-links">
                         <li><a href="index.html" >Inicio</a></li>
                         <li><a href="search.html">Buscar Aula</a></li>
                         <li><a href="map.html">Mapa</a></li>
                         <li><a href="login.html">Iniciar Sesion</a></li>
                     </ul>
-                </nav>
-            </div>
+                    <button class="navbar-toggler">
+                        <span></span>
+                      </button>
+            </nav>
         </header>
         
         <div class="wrapper">
             <div class="slideshow-container">
-                    <div class="mySlides fade">
+                    <div id="slider1" class="mySlides fade">
                         <div class="text"><p>MeV es una pagina que esta pensada en toda la poblacion estudiantil, la cual muchas veces tiene complicaciones al momento de dirigirse al aula que necesitan llegar</p></div>
                     </div>
                     
-                    <div class="mySlides fade">
-                        <div class="text"><p>MeV es una pagina que esta pensada en toda la poblacion estudiantil, la cual muchas veces tiene complicaciones al momento de dirigirse al aula que necesitan llegar</p></div>
+                    <div id="slider2" class="mySlides fade">
+                        <div class="text"><p>Mev te brindara los servicios de: <br> <br>
+                            - Un mapa de los edifcios del fcyt, en donde se pasan las clases <br> <br>
+                            - Una funcion que trazara la ruta  mas rapida para ir de un edificio a otro <br> <br>
+                            - Crear e ingresar con una cuenta personal que incluira funciones adicionales</p></div>
                     </div>
                     
-                    <div class="mySlides fade">
-                            <img src="https://i.ytimg.com/vi/flq_LCkKE2U/maxresdefault.jpg" style="width:100%">
-                            <div class="text">Caption Three</div>
+                    <div id="slider3" class="mySlides fade">
+                            <div class="text">
+                                <p>Si cuentas con una cuenta personal en MEV podras: <br><br>
+                                - Construir tu propio horario para el semestre utilizando la herramienta para armar horarios de MEV <br><br>
+                                - Dentro tu pagina de usuario podras trasar la ruta a tu siguiente clase automaticamente</p>
+                            </div>
                     </div>
             </div>
             <div style="text-align:center">
@@ -65,15 +69,16 @@
                 <p>For You <br>
                 Made with ♡ </p>
                 <div class="social">
-                    <div id="icon"><a href=""><img width="70" src="image/face.png" alt="Facebook"></a></div>
-                    <div id="icon"><a href=""><img width="70" src="image/twitter.png" alt="Twitter"></a></div>
-                    <div id="icon"><a href=""><img width="70" src="image/insta.png" alt="Instagram"></a></div>
-                    <div id="icon"><a href=""><img width="70" src="image/wp.png" alt="WhatsApp"></a></div>
+                    <div id="icon"><a href="meme.html"><img width="70" src="image/face.png" alt="Facebook"></a></div>
+                    <div id="icon"><a href="meme.html"><img width="70" src="image/twitter.png" alt="Twitter"></a></div>
+                    <div id="icon"><a href="meme.html"><img width="70" src="image/insta.png" alt="Instagram"></a></div>
+                    <div id="icon"><a href="meme.html"><img width="70" src="image/wp.png" alt="WhatsApp"></a></div>
                 </div>
             </div>
             <div id="deep">
                 <p>© Copyright TRN Studio Ltd. 2020. · All rights reserved. Registered in Bolivia · Company number +591 65385951</p>
             </div>
         </footer>
+        <script src="js/navbar.js"></script>
     </body>
 </html>
