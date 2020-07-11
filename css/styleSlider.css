@@ -1,9 +1,9 @@
 * {box-sizing:border-box;
     font-family: 7w7;
+    z-index: 0;
 }
 
 .slideshow-container {
-
   max-width: 100%;
   position: relative;
   margin: auto;
