@@ -1,14 +1,37 @@
+<?php
+
+include("conection.php");
+
+$place=$_POST['imin'];
+$nplace=$_POST['wannago'];
+
+$placeo="SELECT * FROM classroom where cod_cl='$place'";
+$fplace= pg_query($db,$placeo) or die("primer lugar");
+$im=pg_fetch_array($fplace);
+$imin=$im['ubication'];
+
+$places="SELECT * FROM classroom where cod_cl='$nplace'";
+$splace= pg_query($db,$places) or die ("segundo lugar");
+$t=pg_fetch_array($splace);
+$wnn=$t['ubication'];
+
+$question="SELECT * FROM c_map where ubication='$imin' and destiny ='$wnn'";
+$ruta= pg_query($db,$question);
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="utf-8">
-        <title>Ruta</title>
+        <title>Mapa</title>
         <link rel="icon" href="image/favicon.png" type="image/png">
         <link rel="stylesheet" href="css/navbar.css">
         <link rel="stylesheet" href="fonts/style.css">
         <link rel="stylesheet" href="css/footer.css">
         <link rel="stylesheet" href="css/modelviewer.css">
+<<<<<<< HEAD:route.html
         <link rel="stylesheet" href="css/routecss.css">
+=======
+>>>>>>> 500fb6a712a38f321519aba82d11754fed68b335:route.php
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script>
         <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
@@ -35,8 +58,17 @@
         </header>
         <div class="wrapper">
             <div id="card">
-                
-                <model-viewer src="<!--Gary aqui viene el coso :Dxd-->"
+<?php
+if($rutas=pg_fetch_array($ruta)){
+echo '<model-viewer src="'.$rutas['cod_map'].'"';
+}else{
+
+$nq="SELECT * FROM c_map where ubication='$wnn' and destiny ='$imin'";
+$nr= pg_query($db,$nq);
+if($nrs= pg_fetch_array($nr)){
+    echo '<model-viewer src="'.$nrs['cod_map'].'"';
+}}
+?>
                     background-color="#ff0000"
                     alt="Wooden Eagle"
                     shadow-intensity="2"
@@ -44,8 +76,30 @@
                     auto-rotate ar>
                 </model-viewer>
             </div>
+            <div id="names">
+                <h2>Leyenda</h2>
+                <ul>
+                    <li>Edificio Central: amarillo</li>
+                    <li>Edificio Academico 2: Guindo</li>
+                    <li>Edificio Gallinero: rojo</li>
+                    <li>Edificio 607: Gris</li>
+                    <li>Edificio 612: Cafe</li>
+                    <li>Edificio 617: Rosa</li>
+                    <li>Edificio 622: Azul</li>
+                    <li>Edificio 623: celeste</li>
+                    <li>Edificio 624: Azul marino</li>
+                </ul>
+            </div>
             <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
         </div>
+        <style>
+            @media screen and (max-width: 799px){
+                .wrapper{
+                margin-top: 15%;
+                margin-bottom: 10%;
+            }
+            }
+        </style>
         <footer>
             <div>
                 <p>For You </p>

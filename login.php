@@ -16,7 +16,7 @@ if($rows>0){
     $_SESSION['username']=$row[2];
     echo "<head><meta http-equiv='refresh' content='0; url=show.php'></head>";
 }else{
-    echo'usuario o contraseña incorrecta';
+    echo'<head><meta http-equiv="refresh" content="0; url=login.html"></head><script>alert("usuario o contraseña incorrecta")</script>';
 }
 
 ?>
