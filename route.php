@@ -73,20 +73,6 @@ if($nrs= pg_fetch_array($nr)){
                     auto-rotate ar>
                 </model-viewer>
             </div>
-            <div id="names">
-                <h2>Leyenda</h2>
-                <ul>
-                    <li>Edificio Central: amarillo</li>
-                    <li>Edificio Academico 2: Guindo</li>
-                    <li>Edificio Gallinero: rojo</li>
-                    <li>Edificio 607: Gris</li>
-                    <li>Edificio 612: Cafe</li>
-                    <li>Edificio 617: Rosa</li>
-                    <li>Edificio 622: Azul</li>
-                    <li>Edificio 623: celeste</li>
-                    <li>Edificio 624: Azul marino</li>
-                </ul>
-            </div>
             <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
         </div>
         <style>
