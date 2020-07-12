@@ -8,13 +8,13 @@ $rpass=$_POST['repasw'];
 if($user != "" && $email!= "" && $pass!= "" && $rpass!= ""){
     if($pass === $rpass){
         $datos="INSERT INTO student VALUES('$email','$pass','$user')";
-        $conectar=pg_query($db,$datos) or die ("error al introducir datos");
+        $conectar=pg_query($db,$datos) or die ('<script>alert("usuario o correo ya en uso")</script><head><meta http-equiv="refresh" content="0; url=createAcount.html"></head>');
         echo "<head><meta http-equiv='refresh' content='1; url=login.html'></head>";
     }else{
-        die('las contraseñas no coinciden<a href="createAcount.html">Volver</a>'); 
+        die('<script>alert("las contraseñas no coinciden")</script><head><meta http-equiv="refresh" content="0; url=createAcount.html"></head>'); 
     }
 }else{
-    echo'no se llenaron todos los campos<a href="creatAcount.html">';
+    echo'<script>alert("no se llenaron todos los campos")</script><head><meta http-equiv="refresh" content="0; url=createAcount.html"></head>';
 }
 
 ?>
