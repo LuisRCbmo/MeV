@@ -28,10 +28,7 @@ $ruta= pg_query($db,$question);
         <link rel="stylesheet" href="fonts/style.css">
         <link rel="stylesheet" href="css/footer.css">
         <link rel="stylesheet" href="css/modelviewer.css">
-<<<<<<< HEAD:route.html
         <link rel="stylesheet" href="css/routecss.css">
-=======
->>>>>>> 500fb6a712a38f321519aba82d11754fed68b335:route.php
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script>
         <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
