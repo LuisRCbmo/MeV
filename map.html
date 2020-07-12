@@ -4,11 +4,9 @@
         <meta charset="utf-8">
         <title>Mapa</title>
         <link rel="icon" href="image/favicon.png" type="image/png">
-        <link rel="stylesheet" href="css/styleIrA.css">
         <link rel="stylesheet" href="css/navbar.css">
         <link rel="stylesheet" href="fonts/style.css">
         <link rel="stylesheet" href="css/footer.css">
-        <link rel="stylesheet" href="css/style2.css">
         <link rel="stylesheet" href="css/mapstyle.css">
         <link rel="stylesheet" href="css/modelviewer.css">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -19,6 +17,9 @@
     </head>
     <body>
         <header> 
+            <div class="cabecera">
+                <h1>Movimiento é Vida</h1>
+            </div>
             <nav class="navbar">
                 <a href="#" class="navbar-brand">
                     <ul class="nav-links">
@@ -31,7 +32,7 @@
                         <span></span>
                       </button>
             </nav>
-    </header>
+        </header>
         <div class="wrapper">
             <div id="card">
                 <model-viewer src="https://cdn.glitch.com/bf916506-b1fa-48e2-a624-5a653a919b89%2Fmap.glb?v=1594487086389"
@@ -58,14 +59,6 @@
             </div>
             <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
         </div>
-        <style>
-            @media screen and (max-width: 799px){
-                .wrapper{
-                margin-top: 15%;
-                margin-bottom: 10%;
-            }
-            }
-        </style>
         <footer>
             <div>
                 <p>For You </p>

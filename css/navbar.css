@@ -50,14 +50,14 @@ nav a:hover {
 			display: none;
 		}
 	}
-  @media screen and (max-width: 799px) {
+  @media screen and (max-width: 899px) {
 	.navbar ul {
 		padding: 0 10px;
 	  }
 	  .navbar ul li a {
 		min-width: 100px;
 		padding: 0 20px;
-		color: thistle;
+		color: rgba(80, 77, 77, 0.993);;
 	  }
 	}
 	
@@ -69,7 +69,7 @@ nav a:hover {
 	  .navbar ul {
 		width: 100%;
 		padding: 0;
-		background-color: #293133d3;
+		background-color: rgba(30, 105, 155, 0.5);
 		height: auto;
 		max-height: 0;
 		overflow: hidden;
@@ -86,15 +86,14 @@ nav a:hover {
 		padding: 0;
 	  }
 	  .navbar .navbar-toggler {
-		background-color: #000000;
 		display: block;
 		position: absolute;
 		height: 40px;
 		top: 20px;
 		right: 20px;
 		background-color: transparent;
-		color: #fff;
-		border: 3px solid white;
+		color: rgba(61, 59, 59, 0.993);
+		border: 2px solid rgba(61, 59, 59, 0.993);
 		outline: none;
 		padding: 0 5px;
 		cursor: pointer;
@@ -104,7 +103,7 @@ nav a:hover {
 	  .navbar .navbar-toggler span::after {
 		display: block;
 		content: '';
-		background-color: #fff;
+		background-color: rgba(61, 59, 59, 0.993);
 		height: 3px;
 		width: 28px;
 		border-radius: 4px;

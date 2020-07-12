@@ -15,8 +15,11 @@
 }
 
 @font-face{
-    font-family: 7w7;
+    font-family: cont;
     src: url(../fonts/Cinzel-Regular.ttf);
+}
+.form #imagebuscar img{
+    height: 40px;
 }
 
 body{

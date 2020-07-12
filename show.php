@@ -7,13 +7,16 @@
         <link rel="stylesheet" href="css/navbar.css">
         <link rel="stylesheet" href="fonts/style.css">
         <link rel="stylesheet" href="css/footer.css">
-        <link rel="stylesheet" href="css/style2.css">
+        <link rel="stylesheet" href="css/showcss.css">
         <link rel="stylesheet" href="css/tableStyle.css">
         <script src="js/jquery-3.5.1.js"></script>
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     </head>
     <body>
-        <header>
+    <header> 
+            <div class="cabecera">
+                <h1>Movimiento é Vida</h1>
+            </div>
             <nav class="navbar">
                 <a href="#" class="navbar-brand">
                     <ul class="nav-links">

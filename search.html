@@ -5,15 +5,15 @@
         <title>Ir A</title>
         <link rel="icon" href="image/favicon.png" type="image/png">
         <link rel="stylesheet" href="css/navbar.css">
-        <link rel="stylesheet" href="fonts/style.css">
         <link rel="stylesheet" href="css/footer.css">
-        <link rel="stylesheet" href="css/style2.css">
         <link rel="stylesheet" href="css/styleIrA.css">
-        <script src="http://code.jquery.com/jque..."></script>
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     </head>
     <body>
         <header> 
+            <div class="cabecera">
+                <h1>Movimiento é Vida</h1>
+            </div>
             <nav class="navbar">
                 <a href="#" class="navbar-brand">
                     <ul class="nav-links">
@@ -28,9 +28,8 @@
             </nav>
         </header>
         <div class="wrapper">
-            <div class="boxes">
-                <div class="boxes2">
-                    <div id="form">
+        
+                    <div class="form">
                         <div id="imagebuscar">
                             <img src="image/buscar.png" alt="imagen" width="100%">
                         </div>
@@ -44,28 +43,23 @@
                                 <label for="">Quiero ir a: </label><br>
                                 <input type="text" name="wannago" id="" maxlength="4" placeholder="Ejemplo: 691A"><br>
                             </div>
+                            <div id="button"> 
                             <input type="submit" value="Buscar" id="boton">
+                            </div>
                         </form>
                     </div>
-                    <div id="instructions">
+                    <div class="instructions">
+                        <h3>Pasos a seguir</h3>
                         <p>
-                            <b>Pasos a seguir:</b><br>
                             En la casilla de ingresar la opcion de "Estoy en" tienes que ingresar el aula en el que te encuentras exactamente.
                             En la casilla de ingresar la opcion de "Quiero ir a" tienes que ingresar el aula a donde quieres dirigirte. <br>
                             Lo que vayas a ingresar debe estar en mayuscula. <br>
-                            Dano el caso que tu destino se el AUDITORIO ingresa "AUDI".
+                            Dado el caso que tu destino se el AUDITORIO ingresa "AUDI".
                         </p>
                     </div>
-                </div>
-            </div>  
+               
         </div>
         <style>
-            @media screen and (max-width: 799px){
-                .wrapper{
-                margin-top: 15%;
-                margin-bottom: 10%;
-            }
-            }
         </style>
         <footer>
             <div>

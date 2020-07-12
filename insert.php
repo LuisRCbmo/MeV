@@ -11,9 +11,7 @@ session_start();
         <link rel="stylesheet" href="css/navbar.css">
         <link rel="stylesheet" href="fonts/style.css">
         <link rel="stylesheet" href="css/footer.css">
-        <link rel="stylesheet" href="css/style2.css">
         <link rel="stylesheet" href="css/addStyle.css">
-        <script src="js/navbar.js"></script>
         <script src="http://code.jquery.com/jque..."></script>
         <script language="javascript" src="js/jquery-3.5.1.js"></script>
         <script>
@@ -44,7 +42,10 @@ session_start();
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     </head>
     <body>
-        <header>
+    <header> 
+            <div class="cabecera">
+                <h1>Movimiento é Vida</h1>
+            </div>
             <nav class="navbar">
                 <a href="#" class="navbar-brand">
                     <ul class="nav-links">
@@ -59,8 +60,8 @@ session_start();
             </nav>
         </header>
         <div class="wrapper">
-            <h2>Añadir materia</h2>
             <form action="select.php" method="POST">
+            <h2>Añadir materia</h2>
                 <label for="">Carrera: </label>
                 <select name="carreras" id="carreras"><option value="">Informatica</option></select><br>
                 <label for="">Semestre:</label>
@@ -96,5 +97,6 @@ session_start();
                 <p>© Copyright TRN Studio Ltd. 2020. · All rights reserved. Registered in Bolivia · Company number +591 65385951</p>
             </div>
         </footer>
+        <script src="js/navbar.js"></script>
     </body>
 </html>

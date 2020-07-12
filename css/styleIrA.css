@@ -1,61 +1,192 @@
-*{
-    padding: 0%;
+*{  padding: 0%;
     margin: 0%;
-    color: black    ;
+    overflow-x: hidden;
+}
+/*cabecera*/
+.cabecera, nav{
+    text-align: center;
+    padding: 2%;
+    background-color: rgba(30, 105, 155, 0.856);
+    z-index: 1;
+}
+@font-face{
+    font-family: titulo;
+    src: url(../fonts/Galada-Regular.ttf);
+}
+
+.cabecera h1{
+    padding: 0;
+    font-family: titulo;
+    font-size: 8vw;
+    color: rgba(46, 45, 45, 0.993);
+}
+nav{
+    z-index: 3;
+}
+@media screen and (max-width:899px){
+    .cabecera{
+        background-color:  rgba(30, 105, 155, 0.918);
+        text-align: justify;
+    }
+    .cabecera h1{
+        color: rgba(61, 59, 59, 0.993);
+        font-size: 10vw;
+        padding-top: 2%;
+    }
+}
+/*fin cabecera*/
+body{
+    background-image: url(../image/fondoheader.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.wrapper{
+    padding: 3%;
+    margin: 0;
+}
+.form #imagebuscar{
+    margin-top: 3%;
+    margin-bottom: 3%;
+    text-align: center;
+    height: max-content;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #forms{
-    margin-left: auto;
-    margin-right: auto;
-    width: max-content;
-    text-align: justify;
+    font-size: 2vw;
+    margin-bottom: 10%;
 }
-.forms input{
-    height: 50px0;
+#forms input{
+    padding: 2.5%;
+}
+@font-face{
+    font-family: cont;
+    src: url(../fonts/Cinzel-Regular.ttf);
+}
+.form h2{
+    font-family: cont;
+    text-align: center;
+    font-size: 2.5vw;
 }
 
-#form{
+#boton{
+    background-color: #8a4402e0 ;
+    border: 2px solid black;
+    padding: 1.5%;
+    font-size: 1.6vw;
+    padding-left: 3%;
+    padding-right: 3%;
+    margin-bottom: 20%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#boton:hover{
+    background-color: rgba(145, 41, 9, 0.459);
+}
+
+form{
+    width: min-content;
     margin-left: auto;
     margin-right: auto;
-    width: 300px;
-    background-color: rgba(158, 103, 20, 0.808);
-    border-radius: 50px;
 }
-#instructions{
-    margin-top: 5%;
-    font-size: 25px;
+
+.form{
+    border-radius: 10%;
+    width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(224, 76, 7, 0.76);
 }
-@media screen and (min-width:800px){
-    .wrapper{
-        width: 600px;
-        background-color: rgba(59, 96, 121, 0.555);
-        border-radius: 20px;
+
+.instructions{
+    margin-bottom: 4%;
+    font-family: cont;
+    text-align: justify;
+    padding: 3%;
+    width: 60%;
+}
+.instructions p{
+    color: bisque;
+    font-size: 2vw;
+    background-color: rgba(20, 15, 24, 0.76);
+    padding: 2%;
+}
+.instructions h3{
+    text-align: center;
+    font-family: cont;
+    margin-bottom: 3%;
+    font-size: 3vw;
+}
+#button {
+    text-align: center;
+}
+@media screen and (min-width:900px){
+    .form{
+        float: right;
     }
-    #imagebuscar{
+    .instructions{
+        float: left;
+        background-image: url(../image/opcion1.jpg);
+    }
+}
+@media screen and (max-width:899px){
+    .wrapper{
+        margin-top: 3%;
+        margin-bottom: 3%;
         margin-left: auto;
         margin-right: auto;
-        width: 110px;
-
+        width: 90%;
+        background-image: url(../image/opcion1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
     }
-}
-@media screen and (max-width:800px){
-    .wrapper{
-        width: 80%;
-        background-color: rgba(59, 96, 121, 0.555);
-        border-radius: 12px;
-    }
-    #form{
+    .form{
         margin-left: auto;
         margin-right: auto;
         width: 70%;
-        background-color: rgba(158, 103, 20, 0.808);
-        border-radius: 30px;
-        margin-top: 10px;
     }
-    #imagebuscar{
+    .form h2{
+        font-size: 25px;
+    }
+    .form #imagebuscar{
+        margin-top: 3%;
+        margin-bottom: 3%;
+        text-align: center;
+        height: max-content;
+        width: 50%;
         margin-left: auto;
         margin-right: auto;
-        width: 110px;
     }
-    
+    .instructions{
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        margin-top: 3%;
+    }
+
+    .instructions h3{
+        font-size: 25px;
+    }
+    .instructions p{
+        font-size: 15px;
+        width: 100%;
+        background-color: rgba(24, 12, 1, 0.616);
+    }
+    #forms{
+        font-size: 5vw;
+    }
+    #forms input{
+        padding: 2%;
+    }
+    #boton{
+        font-size: 5vw;
+    }
+}
+
+/*footer*/
+footer{
+    background-color:  rgba(30, 105, 155, 0.781);
 }

@@ -77,14 +77,21 @@ footer{
     width: min-content;
     padding-top: 5%;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 899px) {
      #icon{
         width: 100px;
     }
     #icon img{
         width: 80%;
     }
+    #deep{
+        width: 100%;
+    }
     #deep p{
         font-size: 15px;
+        width: max-content;
+    }
+    footer div p{
+        font-size: 5vw;
     }
 }

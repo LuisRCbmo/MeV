@@ -1,132 +1,124 @@
+*{  padding: 0%;
+    margin: 0%;
+    overflow-x: hidden;
+}
+/*cabecera*/
+.cabecera, nav{
+    text-align: center;
+    padding: 2%;
+    background-color: rgba(30, 105, 155, 0.856);
+    z-index: 1;
+}
+@font-face{
+    font-family: titulo;
+    src: url(../fonts/Galada-Regular.ttf);
+}
 
+.cabecera h1{
+    padding: 0;
+    font-family: titulo;
+    font-size: 8vw;
+    color: rgba(46, 45, 45, 0.993);
+}
+nav{
+    z-index: 3;
+}
+@media screen and (max-width:899px){
+    .cabecera{
+        background-color:  rgba(30, 105, 155, 0.918);
+        text-align: justify;
+    }
+    .cabecera h1{
+        color: rgba(61, 59, 59, 0.993);
+        font-size: 10vw;
+        padding-top: 2%;
+    }
+}
+/*fin cabecera*/
 body{
     background-image: url(../image/fondoheader.jpg);
-    background-repeat: no-repeat;
     background-size: cover;
+    background-repeat: no-repeat;
 }
-header{
-    padding: 5%;
-}
-@media screen and (min-width:800px){
-    li{
-        background-color: #caa659d5;
-        border: 2px solid black;
-    }
-    ul{
-        vertical-align: middle;
-        margin-top: auto;
-        margin-bottom: auto;
-    }
-    .wrapper{
-        margin-top: auto;
-        margin-bottom: auto;
-        margin-left: auto;
-        margin-right: auto;
-        width: 40%;
-        border-radius: 20px;
-        text-align: center;
-        background-color: rgba(59, 96, 121, 0.555);;
-        padding:3%;
-    }
-    
-    .user{
-        width: 100px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .user img{
-        width: 100%;
-    }
-    
-    #formulario {
-        padding: 3%;
-        background-color: rgba(158, 103, 20, 0.808);
-        margin-left: auto;
-        margin-right: auto;
-        width: 400px;
-        border-radius: 30px;
-        margin-top: 10px;
-        margin: auto;
-        width: max-content;
-    }
+.wrapper{
+    width: 100%;
+    padding: 3%;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-
-
-h2{
-    font-size: 200%;
-    margin: 3%;
-}
-
-label{
-    font-size: 150%;
-}
-
-input{
-    padding: 1%;
-    margin-top: 1%;
-    margin-bottom: 2.5%;
-}
-#boton{
-    margin-top: 4%;
+#name{
     width: 50%;
-    height: 30px;
-    background-color: #612103d0;
-    color: #E8E8E8;
-    margin-bottom: 10%;
-    font-size: 15px;
-    border-radius: 10px;
-    font-weight: 700;
 }
-a{
-    color: #E9C893;
-    text-decoration: none;
+#card{
+    width: 80%;
+    margin-right: 4%;
 }
-a:hover{
-    color: #333A56;
-}
-.details{
-    font-size: 20px;
-}
-
-
-
-@media screen and (max-width:799px){
-    form{
-        width: max-content;
-        margin-left: auto;
-        margin-right: auto;
-        padding-top:4%;
+@media screen and (min-width:900px){
+    #card{
+        float: right;
     }
-    .user{
-        margin-left: auto;
-        margin-right: auto;
-        width: fit-content;
+    #name{
+        float: left;
     }
-    .user img{
-        width: 40%;
-    }
-    #formulario{
-        padding-top: 10%;
-        padding-bottom: 10%;
+}
+@media screen and (max-width:899px){
+    .wrapper{
+        margin-top: 3%;
+        margin-bottom: 3%;
         margin-left: auto;
         margin-right: auto;
         width: 90%;
-        background-color: rgba(158, 103, 20, 0.808);
-        border-radius: 30px;
-        margin-top: 10px;
+        background-image: url(../image/opcion1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
     }
-    .wrapper{
-        padding-top: 20px;
-        width: 80%;
-        margin-top: auto;
-        margin-bottom: auto;
+    .form{
         margin-left: auto;
         margin-right: auto;
-        border-radius: 20px;
-        text-align: center;
-        background-color: rgba(59, 96, 121, 0.555);;
-        padding:3%;
+        width: 70%;
+        border-radius: 10%;
     }
-    
+    .form h2{
+        font-size: 25px;
+    }
+    .form #imagebuscar{
+        margin-top: 3%;
+        margin-bottom: 3%;
+        text-align: center;
+        height: max-content;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .instructions{
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        margin-top: 3%;
+    }
+
+    .instructions h3{
+        font-size: 25px;
+    }
+    .instructions p{
+        font-size: 15px;
+        width: 100%;
+        background-color: rgba(24, 12, 1, 0.616);
+    }
+    #forms{
+        font-size: 5vw;
+    }
+    #forms input{
+        padding: 2%;
+    }
+    #boton{
+        font-size: 5vw;
+    }
+}
+
+/*footer*/
+footer{
+    background-color:  rgba(30, 105, 155, 0.781);
 }
