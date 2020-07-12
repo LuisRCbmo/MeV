@@ -9,8 +9,7 @@
         <link rel="stylesheet" href="css/footer.css">
         <link rel="stylesheet" href="css/style2.css">
         <link rel="stylesheet" href="css/tableStyle.css">
-        <script src="js/navbar.js"></script>
-        <script src="http://code.jquery.com/jque..."></script>
+        <script src="js/jquery-3.5.1.js"></script>
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     </head>
     <body>
@@ -87,5 +86,6 @@ while($subjects=pg_fetch_array($clases)){
                 <p>© Copyright TRN Studio Ltd. 2020. · All rights reserved. Registered in Bolivia · Company number +591 65385951</p>
             </div>
         </footer>
+        <script src="js/navbar.js"></script>
     </body>
 </html>

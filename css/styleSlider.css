@@ -16,7 +16,7 @@
   margin-right: auto;
   overflow: hidden;
   display: none;
-  height: 600px;
+  height: 600px; 
   background-repeat: no-repeat;
   background-size: cover;
   width:100%;
@@ -70,11 +70,11 @@
 }
 
 #slider2 p {
-  font-size: 50px;
+  font-size: 40px;
 }
 
 #slider3 p {
-  font-size: 53px;
+  font-size: 45px;
 }
 
 @media screen and (max-width:799px){
@@ -121,7 +121,7 @@
 }
 
 .active, .dot:hover {
-  background-color: #717171;
+  background-color: #000000;
 }
 
 .fade {
