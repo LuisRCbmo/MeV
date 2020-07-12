@@ -35,14 +35,14 @@
                             <img src="image/buscar.png" alt="imagen" width="100%">
                         </div>
                         <h2>Buscar Aula</h2>
-                        <form action="">
+                        <form action="route.php" method="POST">
                             <div id="forms">
                                 <label for="">Estoy en: </label><br>
-                                <input type="text" name="imin" id="" maxlength="4" placeholder="Ejemplo: 692B"><br>
+                                <input type="text" name="imin" id="imin" maxlength="4" placeholder="Ejemplo: 692B"><br>
                             </div>
                             <div id="forms">
                                 <label for="">Quiero ir a: </label><br>
-                                <input type="text" name="wannago" id="" maxlength="4" placeholder="Ejemplo: 691A"><br>
+                                <input type="text" name="wannago" id="wannago" maxlength="4" placeholder="Ejemplo: 691A"><br>
                             </div>
                             <input type="submit" value="Buscar" id="boton">
                         </form>
@@ -53,7 +53,7 @@
                             En la casilla de ingresar la opcion de "Estoy en" tienes que ingresar el aula en el que te encuentras exactamente.
                             En la casilla de ingresar la opcion de "Quiero ir a" tienes que ingresar el aula a donde quieres dirigirte. <br>
                             Lo que vayas a ingresar debe estar en mayuscula. <br>
-                            Dano el caso que tu destino se el AUDITORIO ingresa "AUDI".
+                            Dado el caso que tu destino sea el AUDITORIO ingresa "AUDI".
                         </p>
                     </div>
                 </div>
